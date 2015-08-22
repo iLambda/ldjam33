@@ -16,7 +16,6 @@ public class PopulationManager : MonoBehaviour {
         {
             var citizen = Instantiate(CitizenPrefab, new Vector3(Random.Range(-45f, 45f), 1, Random.Range(-45f, 45f)), Quaternion.Euler(0, 0, 0)) as GameObject;
             var props = citizen.GetComponent<MoveBehavior>();
-            props.Point = new Vector3(Random.Range(-45f, 45f), 0, Random.Range(-45f, 45f));
             props.Speed = Random.Range(1f, 5f);
             citizen.transform.SetParent(transform);
         }
