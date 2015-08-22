@@ -8,32 +8,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using UnityEngine;
 namespace AssemblyCSharp
 {
-	public class GenericAgent
+	public class GenericAgent: MonoBehaviour
 	{
 		//Attributes
-		public enum States { Idle, Move, WatchForEnnemy, Attack };
-		public float TargetDistance;
-		public float Speed;
+		public enum States { Idle, Move};
+		public float speed;
 		public GenericWeapon weapon;
 		public States state;
+		public GameObject target;
+		public string targetTag;
+		public GameObject obstacle;
+		public bool blockedbyobstacle = false;
+		Vector3 nextpos;
 
-		public GenericAgent ()
-		{
-			States state = States.Idle;
-		}
-
-		public void Move(){
-			//TODO write move function
-		}
-
-		public boolean WatchForEnnemy(){
-			//TODO write watch function
-		}
-
-		public int Attack(){
-			//TODO write attack function
+		public void Start(){
 		}
 
 		public void Update(){
@@ -42,31 +33,33 @@ namespace AssemblyCSharp
 			case States.Idle:
 				state = States.Move;
 				break;
-
+				
 			case States.Move:
-				state = States.WatchForEnnemy;
-				break;
-
-			case States.WatchForEnnemy:
-				if(WatchForEnnemy){
-					state = States.Attack;
-				}
-				else{
-					state = States.Move;
-				}
-				break;
-
-			case States.Attack:
-				Attack ();
-				state = States.WatchForEnnemy;
+				Move();
+				state = States.Move;
 				break;
 
 			default:
 				state = States.Idle;
 				Console.Write ("Warning encountered state default in agent FSM");
 				break;
-			}			
+			}	
 		}
+
+		public OnTriggerEnter(Collider other){
+			if(other.gameObject.CompareTag ( targetTag )){
+				Attack ();
+			}
+		}
+
+		public void Move(){
+			//TODO write random move function + obstacle avoidance
+		}
+
+		public void Attack(){
+			//TODO write Attack() function
+		}
+
 	}
 }
 
