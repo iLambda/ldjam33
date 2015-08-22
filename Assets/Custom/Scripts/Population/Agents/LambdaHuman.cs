@@ -7,14 +7,14 @@
 //     le code est régénéré.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
-namespace AssemblyCSharp
+
+public class LambdaHuman
 {
-	public class LambdaHuman
+	public LambdaHuman ()
 	{
-		public LambdaHuman ()
-		{
-		}
 	}
 }
+
 

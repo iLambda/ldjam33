@@ -9,57 +9,53 @@
 //------------------------------------------------------------------------------
 using System;
 using UnityEngine;
-namespace AssemblyCSharp
+
+
+public class GenericAgent: MonoBehaviour
 {
-	public class GenericAgent: MonoBehaviour
-	{
-		//Attributes
-		public enum States { Idle, Move};
-		public float speed;
-		public GenericWeapon weapon;
-		public States state;
-		public GameObject target;
-		public string targetTag;
-		public GameObject obstacle;
-		public bool blockedbyobstacle = false;
-		Vector3 nextpos;
+	//Attributes
+	public enum States { Idle, Move};
+	public float speed;
+	public GenericWeapon weapon;
+	public States state;
+	public GameObject target;
+	public string targetTag;
+	public GameObject obstacle;
+	public bool blockedbyobstacle = false;
+	Vector3 nextpos;
 
-		public void Start(){
-		}
-
-		public void Update(){
-			switch (state)
-			{
-			case States.Idle:
-				state = States.Move;
-				break;
+	public void Update(){
+		switch (state)
+		{
+		case States.Idle:
+			state = States.Move;
+			break;
 				
-			case States.Move:
-				Move();
-				state = States.Move;
-				break;
+		case States.Move:
+			Move();
+			state = States.Move;
+			break;
 
-			default:
-				state = States.Idle;
-				Console.Write ("Warning encountered state default in agent FSM");
-				break;
-			}	
-		}
-
-		public OnTriggerEnter(Collider other){
-			if(other.gameObject.CompareTag ( targetTag )){
-				Attack ();
-			}
-		}
-
-		public void Move(){
-			//TODO write random move function + obstacle avoidance
-		}
-
-		public void Attack(){
-			//TODO write Attack() function
-		}
-
+		default:
+			state = States.Idle;
+			Console.Write ("Warning encountered state default in agent FSM");
+			break;
+		}	
 	}
+
+	public void OnTriggerEnter(Collider other){ //TODO create object collider
+		if(other.gameObject.CompareTag ( targetTag )){
+			Attack ();
+		}
+	}
+
+	public void Move(){
+		//TODO write random move function + obstacle avoidance
+	}
+
+	public void Attack(){
+		//TODO write Attack() function
+	}
+
 }
 

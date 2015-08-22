@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
-namespace AssemblyCSharp
-{
-	public class Zombie
-	{
-		public Zombie ()
-		{
+using UnityEngine;
 
-		}
+public class Zombie : GenericAgent
+{
+	public void Start(){
+		speed = 0.5f; //TODO set zombie speed value
+		weapon = Weapons.GetWeapon (Weapons.Weapon.Fist);
 	}
 }
+
 
