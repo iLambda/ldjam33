@@ -9,12 +9,12 @@
 //------------------------------------------------------------------------------
 
 using System;
+using UnityEngine;
 
 public class LambdaHuman : GenericAgent
 {
-    public int humanityRate = 100;
     private float elapsedTime = 0;
-
+    public GenericWeapon weapon;
     public void Start()
     {
         speed = 0.5f; //TODO set zombie speed value
@@ -25,6 +25,7 @@ public class LambdaHuman : GenericAgent
         nextpos = transform.position;
         healthPoints = 100;
         gameObject.tag = "human";
+        humanityRate = UnityEngine.Random.Range(40, 100);
     }
 
     public void Move()
@@ -33,15 +34,15 @@ public class LambdaHuman : GenericAgent
 
     }
 
-    public void Attack()
+    public override GenericWeapon Attack(float distance)
     {
-        //Debug.Log("Tried to attack " + targetTag );
-        //TODO write Attack() function
-        if (elapsedTime > weapon.CoolDown)
+        if ((cooldown < 0) && (weapon.Range >= distance))
         {
-            elapsedTime = 0;
+            Debug.Log(" I, human tried to attack " + targetTag);
+            cooldown = weapon.CoolDown;
+            return weapon;
         }
-        
+        return null;        
     }
 
     public void Die()

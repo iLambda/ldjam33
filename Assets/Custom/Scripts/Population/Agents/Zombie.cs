@@ -13,37 +13,55 @@ using UnityEngine;
 public class Zombie : GenericAgent
 {
     //attributes
-    public int agressivityRate = 50;
-
+    public int agressivityRate = 50; // over 100
+    public GenericWeapon fistWeapon;
+    public GenericWeapon biteWeapon;
 	public void Start(){
+        fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
+        biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
 		speed = 0.5f; //TODO set zombie speed value
-		weapon = Weapons.GetWeapon (Weapons.Weapon.Fist);
         state = States.Idle;
         target = null;
         targetTag = "human";
         nextpos = transform.position;
         healthPoints = 100;
+        humanityRate = 0;
         gameObject.tag = "zombie";
 	}
 
-    public void Move()
+    public override void Move()
     {
         
         //check for neighbourhood and update agressivity rate accorgingly
 
     }
 
-    public void Attack()
+    public override GenericWeapon Attack(float distance)
     {
-        Debug.Log("Tried to attack " + targetTag);
-        //TODO write Attack() function
+        GenericWeapon weaponUsed;
+        int roll_dice = UnityEngine.Random.Range(1, 101);
+        //If aggressive, higher probability to use fist attack to kill your opponent
+        if (roll_dice < agressivityRate)
+        {
+            //fist
+            weaponUsed = fistWeapon;
+        }
+        else //If quiet, higher probability to use bite attack to contaminate your opponent
+        {
+            //bite
+            weaponUsed = biteWeapon;
+        }
 
-        //Bite according to agressivity ratio
-
-        //Contaminate
+        if ((cooldown < 0) && (weaponUsed.Range >= distance))
+        {
+            Debug.Log(" I, zombie tried to attack " + targetTag);
+            cooldown = weaponUsed.CoolDown;
+            return weaponUsed;
+        }
+        return null;
     }
 
-    public void Die()
+    public override void Die()
     {
         // TODO add this zombie death to the zombie counter
         Destroy(gameObject);

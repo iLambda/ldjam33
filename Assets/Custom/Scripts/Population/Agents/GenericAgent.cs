@@ -16,7 +16,6 @@ public class GenericAgent: MonoBehaviour
 	//Attributes
 	public enum States { Idle, Move};
 	public float speed;
-	public GenericWeapon weapon;
 	public States state;
 	public GameObject target;
 	public string targetTag;
@@ -24,8 +23,11 @@ public class GenericAgent: MonoBehaviour
 	public bool blockedbyobstacle = false;
 	public Vector3 nextpos;
     public int healthPoints;
+    public int humanityRate;
+    public double cooldown;
 
 	public void Update(){
+        cooldown-- ; // TODO decrement temporally
 		switch (state)
 		{
 		case States.Idle:
@@ -48,27 +50,42 @@ public class GenericAgent: MonoBehaviour
             Die();
         }
 	}
+
 	public void OnTriggerEnter(Collider other){ //TODO create object collider
         Debug.Log("targetTag : " + targetTag );
         Debug.Log("OtherTag : " + other.tag );
-        //if (other.gameObject.CompareTag(targetTag))
-        //{
-          //  Attack();
-        //}
-	}
-
- 
-        
-   
+        if (other.gameObject.CompareTag(targetTag))
+        {
+            float distance = Vector3.Distance(transform.position, other.attachedRigidbody.position);
+            GenericWeapon usedWeapon = Attack(distance);
+            GenericAgent otherAgent = other.gameObject.GetComponent<GenericAgent>();
+            Debug.Log("generic agent is" + otherAgent.name);
+            if ((usedWeapon != null) && (otherAgent != null))
+            {
+                if (usedWeapon.Contagion > 0)
+                {
+                    otherAgent.humanityRate -= usedWeapon.Contagion;
+                    Debug.Log("Humanity left" + otherAgent.humanityRate);
+                }
+                otherAgent.healthPoints -= usedWeapon.Damages;
+                Debug.Log("Lifepoints left" + otherAgent.healthPoints);
+            }
+        }
+        else
+        {
+            Debug.Log("I, "+ this.name +" am pacifist towards " + other.tag);
+        }
+	} 
 
     public virtual void Move()
     {
         //does nothing
     }
 
-    public virtual void Attack()
+    public virtual GenericWeapon Attack(float distance)
     {
         //does nothing
+        return null;
     }
 
     public virtual void Die()

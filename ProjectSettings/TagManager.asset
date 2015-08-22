@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trigger
+  - zombie
+  - human
   layers:
   - Default
   - TransparentFX
