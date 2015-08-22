@@ -8,18 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
-namespace AssemblyCSharp
-{
-	public class Weapons
-	{
-		public enum Names{Fist, Gun};
-		public Dictionary<Names, Weapon> type = new Dictionary<Names, Weapon>;
+using 
 
-		public Weapons ()
-		{
-			type.Add(Fist, GenericWeapon(5, 5, 10)); // TODO Gamedesign Values subject to future changes
-			type.Add (Gun, GenericWeapon (3, 15, 15)); //TODO Gamedesign Values subject to future changes
-		}
+public class Weapons
+{
+	public enum Weapon{Fist, Gun};
+	public static Dictionary<Weapon, GenericWeapon> type = new Dictionary<Weapon, GenericWeapon>;
+
+	public Weapons ()
+	{
+		type.Add(Fist, new GenericWeapon(5, 5, 10)); // TODO Gamedesign Values subject to future changes
+		type.Add(Gun, new GenericWeapon (3, 15, 15)); //TODO Gamedesign Values subject to future changes
+	}
+
+	public static GenericWeapon GetWeapon(Weapon n){
+		return type [n];
 	}
 }
 
