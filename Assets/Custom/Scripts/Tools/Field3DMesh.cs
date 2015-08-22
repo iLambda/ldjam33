@@ -14,7 +14,7 @@ namespace Assets.Custom.Scripts.Tools
 
         // The function that will compute the field. It can
         // use time as a parameter.
-        public Func<float, float, float> Field = (x, y) => (x * x) - (y * y);
+        public Func<float, float, float> Field = (x, y) => Mathf.Cos(x + Time.time) + Mathf.Cos(y + Time.time);
 
         // Number of vertex along X axis
         public int ResolutionX;
@@ -92,12 +92,12 @@ namespace Assets.Custom.Scripts.Tools
                          *  +---+
                          * v+rX  v+rX+1
                          */
-                        triangles[6 * triIndex] = vertexMatchingIndex; // The direct vertex
+                        triangles[6 * triIndex] = vertexMatchingIndex + this.ResolutionX + 1; // The direct vertex
                         triangles[6 * triIndex + 1] = vertexMatchingIndex + 1; // The next vertex on X axis
-                        triangles[6 * triIndex + 2] = vertexMatchingIndex + this.ResolutionX + 1; // The next vertex on X&Y axis
-                        triangles[6 * triIndex + 3] = vertexMatchingIndex; // The direct vertex
+                        triangles[6 * triIndex + 2] = vertexMatchingIndex; // The next vertex on X&Y axis
+                        triangles[6 * triIndex + 3] = vertexMatchingIndex + this.ResolutionX; // The direct vertex
                         triangles[6 * triIndex + 4] = vertexMatchingIndex + this.ResolutionX + 1; // The next vertex on X axis
-                        triangles[6 * triIndex + 5] = vertexMatchingIndex + this.ResolutionX; // The next vertex on Y axis
+                        triangles[6 * triIndex + 5] = vertexMatchingIndex ; // The next vertex on Y axis
                     }
                 }
 
@@ -129,7 +129,7 @@ namespace Assets.Custom.Scripts.Tools
                     
                     // Computing the step to place every vertex
                     var stepX = this.Boundaries.width / this.ResolutionX;
-                    var stepY = this.Boundaries.height/ this.ResolutionY;
+                    var stepY = this.Boundaries.height / this.ResolutionY;
                     var x = stepX * i;
                     var y = stepY * j;
 

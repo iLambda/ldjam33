@@ -41,9 +41,9 @@ public class PopulationManager : MonoBehaviour {
     public float GetPotential(float x, float y)
     {
         // Get potential from children
-        var childrenPotential = gameObject.GetComponentsInChildren<IPotential>();
-        
-        // Return value at
-        return childrenPotential.Select(Pot => Pot.GetPotential(x, y)).Sum();
+        var childrenPotential = gameObject.GetComponentsInChildren<AttractorPotential>();
+
+        // Return value 
+        return childrenPotential != null ? -childrenPotential.Select(Pot => Pot.GetPotential(x, y)).Sum() : 0f;
     }
 }
