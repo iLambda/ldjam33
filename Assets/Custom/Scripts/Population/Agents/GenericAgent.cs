@@ -42,7 +42,6 @@ public class GenericAgent: MonoBehaviour
 			break;
 		}	
 	}
-
 	public void OnTriggerEnter(Collider other){ //TODO create object collider
 		if(other.gameObject.CompareTag ( targetTag )){
 			Attack ();

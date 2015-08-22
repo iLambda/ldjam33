@@ -878,14 +878,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CitizenPrefab: {fileID: 102042, guid: 6267ab33c572a444da6c8149dd82c90d, type: 2}
-  SpawnCount: 50
+  SpawnCount: 200
   RandomSeed: 1698787658
   Boundaries:
     serializedVersion: 2
-    x: -25
-    y: -25
-    width: 50
-    height: 50
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!4 &1746662751
 Transform:
   m_ObjectHideFlags: 0
