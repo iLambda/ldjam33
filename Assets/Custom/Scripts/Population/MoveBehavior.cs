@@ -9,6 +9,9 @@ public enum MoveBehaviorType
     Repulsion
 }
 
+//TODO : handle more than one attractor/repulsor
+// must apply the sum of forces
+
 public class MoveBehavior : MonoBehaviour {
 
     public MoveBehaviorType Type;
