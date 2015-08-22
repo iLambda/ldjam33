@@ -8,15 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
+
 namespace AssemblyCSharp
 {
 	public class GenericWeapon
 		//This class implements the weapon type
 	{
-		public int CoolDown;
-		public int Range;
-		public int Damages;
-		public Dictionary<string, Weapon> weapons = new Dictionary<string, Weapon> ();
+		public float CoolDown;
+		public float Range;
+		public float Damages;
+		//public Dictionary<string, Weapon> weapons = new Dictionary<string, Weapon> ();
 
 		public GenericWeapon (float c, float r, float d) //TODO type is subject to ulteriors changes
 		{

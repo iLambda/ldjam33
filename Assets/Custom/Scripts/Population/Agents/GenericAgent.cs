@@ -46,7 +46,7 @@ namespace AssemblyCSharp
 			}	
 		}
 
-		public OnTriggerEnter(Collider other){
+		public void OnTriggerEnter(Collider other){
 			if(other.gameObject.CompareTag ( targetTag )){
 				Attack ();
 			}
