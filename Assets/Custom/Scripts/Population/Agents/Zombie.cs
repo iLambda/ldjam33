@@ -12,10 +12,41 @@ using UnityEngine;
 
 public class Zombie : GenericAgent
 {
+    //attributes
+    public int agressivityRate = 50;
+
 	public void Start(){
 		speed = 0.5f; //TODO set zombie speed value
 		weapon = Weapons.GetWeapon (Weapons.Weapon.Fist);
+        state = States.Idle;
+        target = null;
+        targetTag = "human";
+        nextpos = transform.position;
+        healthPoints = 100;
 	}
+
+    public void Move()
+    {
+        
+        //check for neighbourhood and update agressivity rate accorgingly
+
+    }
+
+    public void Attack()
+    {
+        //TODO write Attack() function
+
+        //Bite according to agressivity ratio
+
+        //Contaminate
+    }
+
+    public void Die()
+    {
+        // Add this zombie death to the zombie counter
+        Destroy(gameObject);
+    }
+
 }
 
 

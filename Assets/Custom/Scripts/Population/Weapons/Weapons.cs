@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class Weapons
 {
     public enum Weapon{Fist, Gun};
-	public static Dictionary<Weapon, GenericWeapon> type = new Dictionary<Weapon, GenericWeapon>;
+	public static Dictionary<Weapon, GenericWeapon> type = new Dictionary<Weapon, GenericWeapon>();
 
 	public Weapons ()
 	{

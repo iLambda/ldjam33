@@ -22,7 +22,8 @@ public class GenericAgent: MonoBehaviour
 	public string targetTag;
 	public GameObject obstacle;
 	public bool blockedbyobstacle = false;
-	Vector3 nextpos;
+	public Vector3 nextpos;
+    public int healthPoints;
 
 	public void Update(){
 		switch (state)
@@ -40,7 +41,12 @@ public class GenericAgent: MonoBehaviour
 			state = States.Idle;
 			Console.Write ("Warning encountered state default in agent FSM");
 			break;
-		}	
+		}
+
+        if (healthPoints < 0)
+        {
+            Die();
+        }
 	}
 	public void OnTriggerEnter(Collider other){ //TODO create object collider
 		if(other.gameObject.CompareTag ( targetTag )){
@@ -48,13 +54,18 @@ public class GenericAgent: MonoBehaviour
 		}
 	}
 
-	public void Move(){
-		//TODO write random move function + obstacle avoidance
-	}
+    public virtual void Move()
+    {
+        //does nothing
+    }
 
-	public void Attack(){
-		//TODO write Attack() function
-	}
+    public virtual void Attack()
+    {
+        //does nothing
+    }
 
+    public virtual void Die()
+    { //does nothing    
+	}
 }
 

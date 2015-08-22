@@ -10,12 +10,45 @@
 
 using System;
 
-public class LambdaHuman
+public class LambdaHuman : GenericAgent
 {
-	public LambdaHuman ()
-	{
+    public int humanityRate = 100;
 
-	}
+    public void Start()
+    {
+        speed = 0.5f; //TODO set zombie speed value
+        weapon = Weapons.GetWeapon(Weapons.Weapon.Gun);
+        state = States.Idle;
+        target = null;
+        targetTag = "zombie";
+        nextpos = transform.position;
+        healthPoints = 100;
+    }
+
+    public void Move()
+    {
+        //TODO write random move function + obstacle avoidance
+
+        //check for neighbourhood and update agressivity rate accorgingly
+    }
+
+    public void Attack()
+    {
+        //TODO write Attack() function
+    }
+
+    public void Die()
+    {
+        if (humanityRate < 10)
+        {
+            //this object become of type zombie ???
+        }
+        else
+        {
+            //add this death to the human loss score
+            Destroy(gameObject);
+        }
+    }
 }
 
 
