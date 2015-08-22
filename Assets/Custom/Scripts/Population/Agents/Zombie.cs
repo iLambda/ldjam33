@@ -61,10 +61,13 @@ public class Zombie : GenericAgent
         return null;
     }
 
-    public override void Die()
+    public override void LiveOrDie()
     {
-        // TODO add this zombie death to the zombie counter
-        Destroy(gameObject);
+        if (healthPoints < 0)
+        {
+            // TODO add this zombie death to the zombie counter
+            Destroy(gameObject);
+        }
     }
 
 }

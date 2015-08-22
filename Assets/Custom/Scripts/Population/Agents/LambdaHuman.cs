@@ -15,6 +15,7 @@ public class LambdaHuman : GenericAgent
 {
     private float elapsedTime = 0;
     public GenericWeapon weapon;
+    public GameObject transformationPrefab;
     public void Start()
     {
         speed = 0.5f; //TODO set zombie speed value
@@ -45,15 +46,16 @@ public class LambdaHuman : GenericAgent
         return null;        
     }
 
-    public void Die()
+    public override void LiveOrDie()
     {
         if (humanityRate < 10)
         {
             //this object become of type zombie
-            gameObject.AddComponent<Zombie>();
-            Destroy(this);
+            Debug.Log("OH NOOOO I TURNED INTO A ZOMBIE !!!!");
+            GameObject.Instantiate(transformationPrefab, this.transform.position, this.transform.rotation);
+            Destroy(gameObject);
         }
-        else
+        else if (healthPoints < 0)
         {
             //TODO add this death to the human loss score
             Destroy(gameObject);

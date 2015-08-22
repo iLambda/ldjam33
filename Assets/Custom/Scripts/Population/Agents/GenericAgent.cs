@@ -45,10 +45,7 @@ public class GenericAgent: MonoBehaviour
 			break;
 		}
 
-        if (healthPoints < 0)
-        {
-            Die();
-        }
+        LiveOrDie();
 	}
 
 	public void OnTriggerEnter(Collider other){ //TODO create object collider
@@ -88,7 +85,7 @@ public class GenericAgent: MonoBehaviour
         return null;
     }
 
-    public virtual void Die()
+    public virtual void LiveOrDie()
     { //does nothing    
 	}
 }
