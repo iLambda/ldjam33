@@ -23,16 +23,14 @@ public class LambdaHuman : GenericAgent
         state = States.Idle;
         target = null;
         targetTag = "zombie";
-        nextpos = transform.position;
         healthPoints = 100;
         gameObject.tag = "human";
         humanityRate = UnityEngine.Random.Range(40, 100);
     }
 
-    public void Move()
+    public override void Move()
     {
-        //TODO write random move function + obstacle avoidance
-
+        base.Move();
     }
 
     public override GenericWeapon Attack(float distance)
@@ -59,6 +57,7 @@ public class LambdaHuman : GenericAgent
         {
             //TODO add this death to the human loss score
             Destroy(gameObject);
+            Debug.Log("OH NO I MET A HUMAN DEATH");
         }
     }
 }

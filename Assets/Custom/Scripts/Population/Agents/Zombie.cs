@@ -23,7 +23,6 @@ public class Zombie : GenericAgent
         state = States.Idle;
         target = null;
         targetTag = "human";
-        nextpos = transform.position;
         healthPoints = 100;
         humanityRate = 0;
         gameObject.tag = "zombie";
@@ -31,9 +30,7 @@ public class Zombie : GenericAgent
 
     public override void Move()
     {
-        
-        //check for neighbourhood and update agressivity rate accorgingly
-
+        base.Move();
     }
 
     public override GenericWeapon Attack(float distance)
@@ -67,6 +64,7 @@ public class Zombie : GenericAgent
         {
             // TODO add this zombie death to the zombie counter
             Destroy(gameObject);
+            Debug.Log("OH NO I MET ZOMBIE'S DEATH :'( ");
         }
     }
 
