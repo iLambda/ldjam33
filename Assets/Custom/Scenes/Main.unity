@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopulationManager: {fileID: 1746662750}
+  PopulationManager: {fileID: 0}
 --- !u!33 &710926344
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 496554, guid: b83c47e63c6af6944bb7bb4e1cd4ebdf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.19999981
+      value: 9.97999954
       objectReference: {fileID: 0}
     - target: {fileID: 496554, guid: b83c47e63c6af6944bb7bb4e1cd4ebdf, type: 2}
       propertyPath: m_LocalPosition.y
@@ -450,7 +450,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496554, guid: b83c47e63c6af6944bb7bb4e1cd4ebdf, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.89999998
+      value: .569999993
       objectReference: {fileID: 0}
     - target: {fileID: 496554, guid: b83c47e63c6af6944bb7bb4e1cd4ebdf, type: 2}
       propertyPath: m_LocalRotation.x
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopulationManager: {fileID: 1746662750}
+  PopulationManager: {fileID: 0}
 --- !u!1001 &1178425835
 Prefab:
   m_ObjectHideFlags: 0
@@ -577,7 +577,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 420636, guid: 41021bc09cc6f054481a711c7b19cf54, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.7800007
+      value: 9.89000034
       objectReference: {fileID: 0}
     - target: {fileID: 420636, guid: 41021bc09cc6f054481a711c7b19cf54, type: 2}
       propertyPath: m_LocalPosition.y
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopulationManager: {fileID: 1746662750}
+  PopulationManager: {fileID: 0}
 --- !u!33 &1532385210
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -940,8 +940,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1746662751}
-  - 114: {fileID: 1746662750}
   - 114: {fileID: 1746662752}
+  - 114: {fileID: 1746662750}
   m_Layer: 0
   m_Name: PopulationManager
   m_TagString: Untagged
@@ -957,12 +957,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1746662749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f5a1444036353b48aed563ee6cc5f9d, type: 3}
+  m_Script: {fileID: 11500000, guid: a4612a71137c5334a80b5cb42e18a482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CitizenPrefab: {fileID: 102042, guid: 6267ab33c572a444da6c8149dd82c90d, type: 2}
-  SpawnCount: 200
-  RandomSeed: 1698787658
+  CitizenPrefab1: {fileID: 0}
+  CitizenPrefab2: {fileID: 0}
+  SpawnCount: 50
+  RandomSeed: 0
   Boundaries:
     serializedVersion: 2
     x: 0
@@ -1075,7 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopulationManager: {fileID: 1746662750}
+  PopulationManager: {fileID: 0}
 --- !u!33 &2107345075
 MeshFilter:
   m_ObjectHideFlags: 0

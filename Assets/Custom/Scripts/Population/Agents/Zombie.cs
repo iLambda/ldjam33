@@ -25,7 +25,7 @@ public class Zombie : GenericAgent
         targetTag = "human";
         healthPoints = 100;
         humanityRate = 0;
-        gameObject.tag = "zombie";
+        Debug.Log("Just started as a " + gameObject.tag);
 	}
 
     public override void Move()

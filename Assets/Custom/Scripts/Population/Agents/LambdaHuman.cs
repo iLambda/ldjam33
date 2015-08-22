@@ -24,8 +24,8 @@ public class LambdaHuman : GenericAgent
         target = null;
         targetTag = "zombie";
         healthPoints = 100;
-        gameObject.tag = "human";
         humanityRate = UnityEngine.Random.Range(40, 100);
+        Debug.Log("Just started as a " + gameObject.tag);
     }
 
     public override void Move()
