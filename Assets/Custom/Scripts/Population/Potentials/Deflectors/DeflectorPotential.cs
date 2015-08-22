@@ -8,17 +8,21 @@ public enum FunctionMode
 {
     Inverse,
     SqInverse,
-    Gaussian
+    Gaussian,
+    Square
 }
 
 public sealed class DeflectorPotential : MonoBehaviour, IPotential
 {
     // Attraction amplitude (A)
-    public float Amplitude = 1;
+    public float Amplitude = 1;   
+    // Attraction threshold (T)
+    public float Threshold = 100;
     /* Function profile :
      *  A/d       : FunctionMode.Inverse
      *  A/d²      : FunctionMode.SqInverse
      *  Ae^(-x²)  : FunctionMode.Gaussian
+     *  Ad^2       : FunctionMode.Square
      */
     public FunctionMode FunctionProfile;
 
@@ -40,6 +44,8 @@ public sealed class DeflectorPotential : MonoBehaviour, IPotential
                 return this.Amplitude / sqDistance;
             case FunctionMode.Gaussian:
                 return this.Amplitude * Mathf.Exp(-sqDistance);
+            case FunctionMode.Square:
+                return this.Amplitude * sqDistance;
         }
         
         // Default
