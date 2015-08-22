@@ -12,6 +12,8 @@ public class PopulationManager : MonoBehaviour {
     public int SpawnCount = 200;
     // The seed used
     public int RandomSeed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+    // The boundaries
+    public Rect Boundaries;
     
 	void Start () 
     {
@@ -22,7 +24,7 @@ public class PopulationManager : MonoBehaviour {
         for (int c = 0; c < SpawnCount; c++)
         {
             // Spawning a citizen
-            var citizen = Instantiate(CitizenPrefab, new Vector3(UnityEngine.Random.Range(-45f, 45f), 1, UnityEngine.Random.Range(-45f, 45f)), Quaternion.Euler(0, 0, 0)) as GameObject;
+            var citizen = Instantiate(CitizenPrefab, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 1, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(0, 0, 0)) as GameObject;
             
             // Set as a parent
             citizen.transform.SetParent(transform);
@@ -41,7 +43,7 @@ public class PopulationManager : MonoBehaviour {
     public float GetPotential(float x, float y)
     {
         // Get potential from children
-        var childrenPotential = gameObject.GetComponentsInChildren<AttractorPotential>();
+        var childrenPotential = gameObject.GetComponentsInChildren<IPotential>();
 
         // Return value 
         return childrenPotential != null ? -childrenPotential.Select(Pot => Pot.GetPotential(x, y)).Sum() : 0f;
