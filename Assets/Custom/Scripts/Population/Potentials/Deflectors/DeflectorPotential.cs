@@ -15,9 +15,7 @@ public enum FunctionMode
 public sealed class DeflectorPotential : MonoBehaviour, IPotential
 {
     // Attraction amplitude (A)
-    public float Amplitude = 1;   
-    // Attraction threshold (T)
-    public float Threshold = 100;
+    public float Amplitude = 1;
     /* Function profile :
      *  A/d       : FunctionMode.Inverse
      *  A/d²      : FunctionMode.SqInverse
