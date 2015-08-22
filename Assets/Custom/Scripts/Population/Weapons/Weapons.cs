@@ -17,8 +17,8 @@ namespace AssemblyCSharp
 
 		public Weapons ()
 		{
-			type.Add(Fist, GenericWeapon(5, 5, 10)); // Values subject to future changes
-			type.Add (Gun, GenericWeapon (3, 15, 15)); //Values subject to future changes
+			type.Add(Fist, GenericWeapon(5, 5, 10)); // TODO Gamedesign Values subject to future changes
+			type.Add (Gun, GenericWeapon (3, 15, 15)); //TODO Gamedesign Values subject to future changes
 		}
 	}
 }

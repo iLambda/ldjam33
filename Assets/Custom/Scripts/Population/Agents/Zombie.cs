@@ -14,6 +14,7 @@ namespace AssemblyCSharp
 	{
 		public Zombie ()
 		{
+
 		}
 	}
 }

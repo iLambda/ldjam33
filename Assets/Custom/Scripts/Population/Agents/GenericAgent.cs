@@ -12,8 +12,60 @@ namespace AssemblyCSharp
 {
 	public class GenericAgent
 	{
+		//Attributes
+		public enum States { Idle, Move, WatchForEnnemy, Attack };
+		public float TargetDistance;
+		public float Speed;
+		public GenericWeapon weapon;
+		public States state;
+
 		public GenericAgent ()
 		{
+			States state = States.Idle;
+		}
+
+		public void Move(){
+			//TODO write move function
+		}
+
+		public boolean WatchForEnnemy(){
+			//TODO write watch function
+		}
+
+		public int Attack(){
+			//TODO write attack function
+		}
+
+		public void Update(){
+			switch (state)
+			{
+			case States.Idle:
+				state = States.Move;
+				break;
+
+			case States.Move:
+				state = States.WatchForEnnemy;
+				break;
+
+			case States.WatchForEnnemy:
+				if(WatchForEnnemy){
+					state = States.Attack;
+				}
+				else{
+					state = States.Move;
+				}
+				break;
+
+			case States.Attack:
+				Attack ();
+				state = States.WatchForEnnemy;
+				break;
+
+			default:
+				state = States.Idle;
+				Console.Write ("Warning encountered state default in agent FSM");
+				break;
+			}			
 		}
 	}
 }

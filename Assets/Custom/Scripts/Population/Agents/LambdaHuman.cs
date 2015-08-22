@@ -10,9 +10,9 @@
 using System;
 namespace AssemblyCSharp
 {
-	public class Human
+	public class LambdaHuman
 	{
-		public Human ()
+		public LambdaHuman ()
 		{
 		}
 	}

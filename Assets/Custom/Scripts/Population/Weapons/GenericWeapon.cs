@@ -16,10 +16,11 @@ namespace AssemblyCSharp
 		public int CoolDown;
 		public int Range;
 		public int Damages;
+		public Dictionary<string, Weapon> weapons = new Dictionary<string, Weapon> ();
 
-		public GenericWeapon (float c, float r, float d) //type is subject to ulteriors changes
+		public GenericWeapon (float c, float r, float d) //TODO type is subject to ulteriors changes
 		{
-			CoolDown = c;
+			CoolDown = c; 
 			Range = r;
 			Damages = d;
 		}
