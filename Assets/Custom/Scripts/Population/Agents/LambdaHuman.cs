@@ -13,6 +13,7 @@ using System;
 public class LambdaHuman : GenericAgent
 {
     public int humanityRate = 100;
+    private float elapsedTime = 0;
 
     public void Start()
     {
@@ -23,29 +24,37 @@ public class LambdaHuman : GenericAgent
         targetTag = "zombie";
         nextpos = transform.position;
         healthPoints = 100;
+        gameObject.tag = "human";
     }
 
     public void Move()
     {
         //TODO write random move function + obstacle avoidance
 
-        //check for neighbourhood and update agressivity rate accorgingly
     }
 
     public void Attack()
     {
+        //Debug.Log("Tried to attack " + targetTag );
         //TODO write Attack() function
+        if (elapsedTime > weapon.CoolDown)
+        {
+            elapsedTime = 0;
+        }
+        
     }
 
     public void Die()
     {
         if (humanityRate < 10)
         {
-            //this object become of type zombie ???
+            //this object become of type zombie
+            gameObject.AddComponent<Zombie>();
+            Destroy(this);
         }
         else
         {
-            //add this death to the human loss score
+            //TODO add this death to the human loss score
             Destroy(gameObject);
         }
     }

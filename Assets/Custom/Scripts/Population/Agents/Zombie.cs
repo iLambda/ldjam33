@@ -23,6 +23,7 @@ public class Zombie : GenericAgent
         targetTag = "human";
         nextpos = transform.position;
         healthPoints = 100;
+        gameObject.tag = "zombie";
 	}
 
     public void Move()
@@ -34,6 +35,7 @@ public class Zombie : GenericAgent
 
     public void Attack()
     {
+        Debug.Log("Tried to attack " + targetTag);
         //TODO write Attack() function
 
         //Bite according to agressivity ratio
@@ -43,7 +45,7 @@ public class Zombie : GenericAgent
 
     public void Die()
     {
-        // Add this zombie death to the zombie counter
+        // TODO add this zombie death to the zombie counter
         Destroy(gameObject);
     }
 

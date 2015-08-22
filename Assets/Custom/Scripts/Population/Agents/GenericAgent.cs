@@ -49,10 +49,17 @@ public class GenericAgent: MonoBehaviour
         }
 	}
 	public void OnTriggerEnter(Collider other){ //TODO create object collider
-		if(other.gameObject.CompareTag ( targetTag )){
-			Attack ();
-		}
+        Debug.Log("targetTag : " + targetTag );
+        Debug.Log("OtherTag : " + other.tag );
+        //if (other.gameObject.CompareTag(targetTag))
+        //{
+          //  Attack();
+        //}
 	}
+
+ 
+        
+   
 
     public virtual void Move()
     {
