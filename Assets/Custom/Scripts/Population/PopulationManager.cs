@@ -11,12 +11,14 @@ public class PopulationManager : MonoBehaviour {
     // The number of citizens spawned
     public int SpawnCount = 200;
     // The seed used
-    public int RandomSeed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+    public int RandomSeed = 0;
     // The boundaries
     public Rect Boundaries;
     
 	void Start () 
     {
+        if (RandomSeed == 0)
+            RandomSeed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
         // Setting the seed
         UnityEngine.Random.seed = RandomSeed;
 
