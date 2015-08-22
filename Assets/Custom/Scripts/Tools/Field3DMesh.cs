@@ -14,7 +14,7 @@ namespace Assets.Custom.Scripts.Tools
 
         // The function that will compute the field. It can
         // use time as a parameter.
-        public Func<float, float, float> Field = (x, y) => Mathf.Cos(x + Time.time) + Mathf.Cos(y + Time.time);
+        public Func<float, float, float> Field = (x, y) => (x * x) - (y * y);
 
         // Number of vertex along X axis
         public int ResolutionX;

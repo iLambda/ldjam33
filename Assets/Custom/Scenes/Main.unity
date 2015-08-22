@@ -189,6 +189,7 @@ GameObject:
   - 23: {fileID: 399944560}
   - 114: {fileID: 399944559}
   - 33: {fileID: 399944558}
+  - 114: {fileID: 399944561}
   m_Layer: 0
   m_Name: Field (4)
   m_TagString: Untagged
@@ -226,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a5ab1341cab82408b6f3e3317afcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResolutionX: 100
-  ResolutionY: 100
+  ResolutionX: 25
+  ResolutionY: 25
   Boundaries:
     serializedVersion: 2
     x: -50
@@ -258,6 +259,18 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &399944561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399944556}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationManager: {fileID: 1746662750}
 --- !u!1 &445342398
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +371,7 @@ GameObject:
   - 23: {fileID: 461833686}
   - 114: {fileID: 461833685}
   - 33: {fileID: 461833684}
+  - 114: {fileID: 461833687}
   m_Layer: 0
   m_Name: Field (3)
   m_TagString: Untagged
@@ -395,8 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a5ab1341cab82408b6f3e3317afcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResolutionX: 100
-  ResolutionY: 100
+  ResolutionX: 25
+  ResolutionY: 25
   Boundaries:
     serializedVersion: 2
     x: -50
@@ -427,6 +441,18 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &461833687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 461833682}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationManager: {fileID: 1746662750}
 --- !u!1 &713387785
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +464,7 @@ GameObject:
   - 23: {fileID: 713387789}
   - 114: {fileID: 713387788}
   - 33: {fileID: 713387787}
+  - 114: {fileID: 713387790}
   m_Layer: 0
   m_Name: Field (2)
   m_TagString: Untagged
@@ -475,8 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a5ab1341cab82408b6f3e3317afcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResolutionX: 100
-  ResolutionY: 100
+  ResolutionX: 25
+  ResolutionY: 25
   Boundaries:
     serializedVersion: 2
     x: -50
@@ -507,6 +534,18 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &713387790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713387785}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationManager: {fileID: 1746662750}
 --- !u!1 &1172784332
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +557,7 @@ GameObject:
   - 23: {fileID: 1172784335}
   - 114: {fileID: 1172784334}
   - 33: {fileID: 1172784333}
+  - 114: {fileID: 1172784337}
   m_Layer: 0
   m_Name: Field (1)
   m_TagString: Untagged
@@ -543,8 +583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a5ab1341cab82408b6f3e3317afcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResolutionX: 100
-  ResolutionY: 100
+  ResolutionX: 25
+  ResolutionY: 25
   Boundaries:
     serializedVersion: 2
     x: -50
@@ -587,6 +627,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 231176631}
   m_RootOrder: 0
+--- !u!114 &1172784337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172784332}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aa9e3890e3efd4e9738475767d2bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationManager: {fileID: 1746662750}
 --- !u!1 &1430512378
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
+  currentType: 0
   FieldSize: 50
 --- !u!4 &1544519023
 Transform:
@@ -741,9 +794,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CitizenPrefab: {fileID: 102042, guid: 6267ab33c572a444da6c8149dd82c90d, type: 2}
-  PopulationCount: 200
+  SpawnCount: 200
   RandomSeed: 1698787658
-  Children: []
 --- !u!4 &1746662751
 Transform:
   m_ObjectHideFlags: 0
@@ -784,6 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
+  currentType: 0
   FieldSize: 50
 --- !u!4 &1945924511
 Transform:

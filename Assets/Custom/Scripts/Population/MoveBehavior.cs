@@ -17,17 +17,17 @@ public class MoveBehavior : MonoBehaviour {
     public MoveBehaviorType Type;
     public float Speed = 1f;
 
-    private TriggerField currentField;
+    //private TriggerField currentField;
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine("GetField");
+        //StartCoroutine("GetField");
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Type != MoveBehaviorType.Idle)
+        /*if (Type != MoveBehaviorType.Idle)
         {
             var direction = currentField.transform.position - transform.position;
             direction.Normalize();
@@ -41,16 +41,16 @@ public class MoveBehavior : MonoBehaviour {
                     break;
             }
             transform.LookAt(new Vector3(currentField.transform.position.x, 1, currentField.transform.position.z));
-        }
+        }*/
 	}
 
-    public void SetMoveRoutine(TriggerField field)
+    /*public void SetMoveRoutine(TriggerField field)
     {
         currentField = field;
         Type = field.Type;
     }
-
-    IEnumerator GetField()
+    */
+    /*IEnumerator GetField()
     {
         for(; ;)
         {
@@ -63,5 +63,5 @@ public class MoveBehavior : MonoBehaviour {
             //}
             yield return new WaitForSeconds(1);
         }
-    }
+    }*/
 }
