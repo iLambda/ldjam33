@@ -36,7 +36,7 @@ public class ApocalypticPopManager : MonoBehaviour {
 		// Spawning humans
 		for (int c = 0; c < ZombieSpawn; c++)
         {
-			var citizen = Instantiate(ZombiePrefab, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 0.0f, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(-90, 0, 0)) as GameObject;
+			var citizen = Instantiate(ZombiePrefab, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 0.0f, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(0, 0, 0)) as GameObject;
 
             // Set as a parent
             citizen.transform.SetParent(transform);

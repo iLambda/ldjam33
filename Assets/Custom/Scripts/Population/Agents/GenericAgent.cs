@@ -77,12 +77,16 @@ public class GenericAgent: MonoBehaviour
 		if ((nextPos.Equals(Vector3.zero)) || Vector3.Distance(transform.position, nextPos) < 0.25f)
         {
             //TODO write random move function + obstacle avoidance
-            int r = UnityEngine.Random.Range(1, 3);
+            int r = UnityEngine.Random.Range(4, 10);
             double theta = UnityEngine.Random.Range(0, 360) * Math.PI / 180.0;
             float a = (float)Math.Cos(theta) * r;
             float b = (float)Math.Sin(theta) * r;
 			nextPos = new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b);
+
+			float tempX = transform.rotation.eulerAngles.x;
 			transform.LookAt(nextPos);
+			// compensating mesh flaw, it's awful, but it's works
+			transform.rotation = Quaternion.Euler(tempX, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
         else
         {

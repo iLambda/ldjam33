@@ -177,7 +177,7 @@ Transform:
   - {fileID: 710926342}
   - {fileID: 1532385213}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &445342398
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &710926341
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +611,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &1430512383
 Transform:
   m_ObjectHideFlags: 0
@@ -730,45 +731,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 231176631}
   m_RootOrder: 3
---- !u!1 &1544519021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1544519023}
-  - 114: {fileID: 1544519022}
-  m_Layer: 0
-  m_Name: Attractor
-  m_TagString: Trigger
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1544519022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1544519021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 875af51bca47c0946b49787d346cbcc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1544519023
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1544519021}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &1746662749
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4612a71137c5334a80b5cb42e18a482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombiePrefab: {fileID: 188466, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
+  ZombiePrefab: {fileID: 100600, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
   HumanPrefab: {fileID: 188198, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
   ZombieSpawn: 50
   HumanSpawn: 50
@@ -819,7 +781,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &1746662752
 MonoBehaviour:
   m_ObjectHideFlags: 0
