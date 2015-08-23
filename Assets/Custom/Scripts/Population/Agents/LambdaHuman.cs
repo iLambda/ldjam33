@@ -55,6 +55,7 @@ public class LambdaHuman : GenericAgent
 			Destroy(gameObject);
 			StatusUpdater.humanCount--;
 			StatusUpdater.contaminatedCount++;
+			StatusUpdater.zombiesCount++;
         }
         else if (healthPoints < 0)
         {

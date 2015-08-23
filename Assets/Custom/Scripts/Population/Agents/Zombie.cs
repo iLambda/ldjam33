@@ -25,7 +25,8 @@ public class Zombie : GenericAgent
         targetTag = "human";
         healthPoints = 250;
         humanityRate = 0;
-        Debug.Log("Just started as a " + gameObject.tag);
+		Debug.Log("Just started as a " + gameObject.tag);
+		StatusUpdater.zombiesCount++;
 	}
 
     public override void Move()
@@ -64,7 +65,8 @@ public class Zombie : GenericAgent
         {
             // TODO add this zombie death to the zombie counter
             Destroy(gameObject);
-            Debug.Log("OH NO I MET ZOMBIE'S DEATH :'( ");
+			Debug.Log("OH NO I MET ZOMBIE'S DEATH :'( ");
+			StatusUpdater.zombiesCount--;
         }
     }
 
