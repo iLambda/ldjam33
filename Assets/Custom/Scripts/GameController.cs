@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
     public GameObject Action2Prefab;
 	public float xySpeed = 8.0f;
 	public float zoomSpeed = 16.0f;
+	public float chargeAttrack = 0.0f;
+	public float chargeRepulse = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -44,9 +46,13 @@ public class GameController : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown(0)) {
+			chargeAttrack += Time.deltaTime;
+
+		}
+		if (Input.GetMouseButtonUp (0)) {
 			RaycastHit hit = new RaycastHit();
 			bool hoverUi = (EventSystem.current != null) && EventSystem.current.IsPointerOverGameObject();
-
+			
 			if (!hoverUi
 			    && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
 				if (hit.collider.GetComponent<ActionReceiver>() != null)
@@ -54,6 +60,11 @@ public class GameController : MonoBehaviour {
 					var action = Instantiate(ActionPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
 				}
 			}
+			chargeAttrack = 0.0f;
+		}
+
+		if (Input.GetMouseButtonUp (1)) {
+			chargeRepulse += Time.deltaTime;
 		}
         if (Input.GetMouseButtonDown(1))
         {
@@ -68,6 +79,7 @@ public class GameController : MonoBehaviour {
                     var action = Instantiate(Action2Prefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
                 }
             }
+			chargeRepulse = 0.0f;
         }
 	}
 }
