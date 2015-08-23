@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3326532}
   - 23: {fileID: 2355282}
   - 95: {fileID: 9554352}
-  - 114: {fileID: 11416704}
+  - 114: {fileID: 11455206}
   m_Layer: 0
   m_Name: ActionMarker
   m_TagString: Untagged
@@ -79,7 +79,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11416704
+--- !u!114 &11455206
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,12 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 186776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34414d0a360c4194b82f9f1a47bfec74, type: 3}
+  m_Script: {fileID: 11500000, guid: 8957f795ef9b1c44c9b0ac4c32e910d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amplitude: 1
-  Threshold: 100
-  FunctionProfile: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
