@@ -892,8 +892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4612a71137c5334a80b5cb42e18a482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombiePrefab: {fileID: 139084, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
-  HumanPrefab: {fileID: 167910, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+  ZombiePrefab: {fileID: 188466, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
+  HumanPrefab: {fileID: 188198, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
   ZombieSpawn: 50
   HumanSpawn: 50
   RandomSeed: 0
