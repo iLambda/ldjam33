@@ -18,7 +18,7 @@ public class LambdaHuman : GenericAgent
     public GameObject transformationPrefab;
     public void Start()
     {
-        speed = 15f; //TODO set zombie speed value
+        speed = 1f; //TODO set zombie speed value
         weapon = Weapons.GetWeapon(Weapons.Weapon.Gun);
         state = States.Idle;
         target = null;

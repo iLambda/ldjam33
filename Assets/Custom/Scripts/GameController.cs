@@ -49,9 +49,9 @@ public class GameController : MonoBehaviour {
 
 			if (!hoverUi
 			    && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
-				if (hit.collider.GetComponent<ActionReceiver>() != null)
+				//if (hit.collider.GetComponent<ActionReceiver>() != null)
 				{
-					var action = Instantiate(ActionPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
+					var action = Instantiate(ActionPrefab, new Vector3(hit.point.x, -1, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
 				}
 			}
 		}
@@ -63,10 +63,10 @@ public class GameController : MonoBehaviour {
             if (!hoverUi
                 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                if (hit.collider.GetComponent<ActionReceiver>() != null)
-                {
-                    var action = Instantiate(Action2Prefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
-                }
+                //if (hit.collider.GetComponent<ActionReceiver>() != null)
+                
+                    var action = Instantiate(Action2Prefab, new Vector3(hit.point.x, -1, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                
             }
         }
 	}
