@@ -19,11 +19,11 @@ public class Zombie : GenericAgent
 	public void Start(){
         fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
         biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
-		speed = 10f; //TODO set zombie speed value
+		speed = UnityEngine.Random.Range(30,50)/100.0f; //TODO set zombie speed value
         state = States.Idle;
         target = null;
         targetTag = "human";
-        healthPoints = 100;
+        healthPoints = 250;
         humanityRate = 0;
         Debug.Log("Just started as a " + gameObject.tag);
 	}

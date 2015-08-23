@@ -122,7 +122,7 @@ MonoBehaviour:
   humanityRate: 0
   cooldown: 0
   nextPos: {x: 0, y: 0, z: 0}
-  transformationPrefab: {fileID: 188466, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
+  transformationPrefab: {fileID: 100600, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
 --- !u!136 &13621174
 CapsuleCollider:
   m_ObjectHideFlags: 1

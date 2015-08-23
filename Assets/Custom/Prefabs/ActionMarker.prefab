@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2355282}
   - 95: {fileID: 9554352}
   - 114: {fileID: 11455206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ActionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957f795ef9b1c44c9b0ac4c32e910d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearRange: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
