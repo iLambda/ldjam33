@@ -25,9 +25,10 @@ public class LambdaHuman : GenericAgent
         targetTag = "zombie";
         healthPoints = 100;
         humanityRate = UnityEngine.Random.Range(40, 100);
-        Debug.Log("Just started as a " + gameObject.tag);
-    }
-
+		Debug.Log("Just started as a " + gameObject.tag);
+		StatusUpdater.humanCount++;
+	}
+	
     public override void Move()
     {
         base.Move();
@@ -51,15 +52,18 @@ public class LambdaHuman : GenericAgent
             //this object become of type zombie
             Debug.Log("OH NOOOO I TURNED INTO A ZOMBIE !!!!");
 			GameObject.Instantiate(transformationPrefab, this.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
-            Destroy(gameObject);
+			Destroy(gameObject);
+			StatusUpdater.humanCount--;
+			StatusUpdater.contaminatedCount++;
         }
         else if (healthPoints < 0)
         {
             //TODO add this death to the human loss score
             Destroy(gameObject);
-            Debug.Log("OH NO I MET A HUMAN DEATH");
-        }
-    }
+			Debug.Log("OH NO I MET A HUMAN DEATH");
+			StatusUpdater.humanCount--;
+		}
+	}
 }
 
 
