@@ -18,7 +18,7 @@ public class LambdaHuman : GenericAgent
     public GameObject transformationPrefab;
     public void Start()
     {
-        speed = speed = UnityEngine.Random.Range(5, 10 ) / 100.0f; ; //TODO set zombie speed value
+        speed = UnityEngine.Random.Range(15, 20 ) / 100.0f;  //TODO set human speed value
         weapon = Weapons.GetWeapon(Weapons.Weapon.Gun);
         state = States.Idle;
         target = null;
@@ -31,6 +31,17 @@ public class LambdaHuman : GenericAgent
 	
     public override void Move()
     {
+        if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount > 75)
+        {
+            if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 150)
+            {
+                speed = UnityEngine.Random.Range(20, 30) / 100.0f;
+            }
+            else
+            {
+                speed = UnityEngine.Random.Range(30, 50) / 100.0f;
+            }
+        }
         base.Move();
     }
 

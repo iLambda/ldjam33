@@ -19,7 +19,7 @@ public class Zombie : GenericAgent
 	public void Start(){
         fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
         biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
-		speed = UnityEngine.Random.Range(2,5)/100.0f; //TODO set zombie speed value
+		speed = UnityEngine.Random.Range(5,10)/100.0f; //TODO set zombie speed value
         state = States.Idle;
         target = null;
         targetTag = "human";

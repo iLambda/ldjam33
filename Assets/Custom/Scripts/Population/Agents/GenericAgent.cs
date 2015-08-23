@@ -137,16 +137,26 @@ public class GenericAgent: MonoBehaviour
         float zMax = cameraPosition.z + zDist;
         float zMin = cameraPosition.z - zDist;
 
-        if (newPosition.x < xMin || newPosition.x > xMax)
+        if (newPosition.x < xMin )
         {
-            newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
-            nextPos.x = -nextPos.x;
+            newPosition.x = xMax - (xMin - newPosition.x);
+            nextPos.x = xMax - (xMin - nextPos.x);
+        }
+        if( newPosition.x > xMax)
+        {
+            newPosition.x = xMin + (newPosition.x - xMax);
+            nextPos.x = xMin + (nextPos.x - xMax);
         }
         // TODO vertical bounds
-        if (newPosition.z < zMin || newPosition.z > zMax)
+        if (newPosition.z < zMin)
         {
-            newPosition.z = Mathf.Clamp(newPosition.x, zMin, zMax);
-            nextPos.z = -nextPos.z;
+            newPosition.z = zMax - (zMin - newPosition.z);
+            nextPos.z = zMax - (zMin - nextPos.z);
+        }
+        if (newPosition.z > zMax)
+        {
+            newPosition.z = zMin + (newPosition.z - zMax);
+            nextPos.z = zMin + (nextPos.z - zMax);
         }
         transform.position = newPosition;
     }

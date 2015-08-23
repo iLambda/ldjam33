@@ -43,7 +43,6 @@ class Attractor : MonoBehaviour
     {
         foreach (Collider enemy in zombiesWhoHeard)
         {
-            // use either Send Message or GetComponent and tell this enemy he heard something
             int r = UnityEngine.Random.Range(4, 10);
             double theta = UnityEngine.Random.Range(0, 360) * Math.PI / 180.0;
             float a = (float)Math.Cos(theta) * r;
