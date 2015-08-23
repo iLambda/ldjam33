@@ -99,6 +99,8 @@ public class GenericAgent: MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, nextPos, speed * Time.deltaTime);
         }
 
+        EnforceBounds();
+
     }
 
     public virtual GenericWeapon Attack(float distance)
@@ -118,6 +120,35 @@ public class GenericAgent: MonoBehaviour
         value.z = Mathf.Clamp(value.z, mins.z, maxs.z);
 
         return value;
+    }
+
+    private void EnforceBounds()
+    {
+        // 1
+        Vector3 newPosition = transform.position;
+        Camera mainCamera = Camera.main;
+        Vector3 cameraPosition = mainCamera.transform.position;
+
+        // 2
+        float xDist = mainCamera.aspect * mainCamera.orthographicSize;
+        float zDist = mainCamera.orthographicSize;
+        float xMax = cameraPosition.x + xDist;
+        float xMin = cameraPosition.x - xDist;
+        float zMax = cameraPosition.z + zDist;
+        float zMin = cameraPosition.z - zDist;
+
+        if (newPosition.x < xMin || newPosition.x > xMax)
+        {
+            newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
+            nextPos.x = -nextPos.x;
+        }
+        // TODO vertical bounds
+        if (newPosition.z < zMin || newPosition.z > zMax)
+        {
+            newPosition.z = Mathf.Clamp(newPosition.x, zMin, zMax);
+            nextPos.z = -nextPos.z;
+        }
+        transform.position = newPosition;
     }
 }
 
