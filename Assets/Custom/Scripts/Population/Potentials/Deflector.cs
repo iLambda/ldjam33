@@ -7,11 +7,12 @@ class Deflector : MonoBehaviour
     //attributes
     public float hearRange = 10.0f; // TODO adjust this value
     int zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
-    public float timer = 3.0f;
+    public float timer;
+    public Collider[] zombiesWhoHeard;
 
     public void Start()
     {
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("soundsLayer"), LayerMask.NameToLayer("Default"), true); 
+        timer = 5.0f;
     }
 
     public void Update()
@@ -33,6 +34,7 @@ class Deflector : MonoBehaviour
         }
         else
         {
+            Debug.Log("timer = " + timer);
             stopSound();
         }
 
@@ -40,6 +42,17 @@ class Deflector : MonoBehaviour
 
     public void stopSound()
     {
+        foreach (Collider enemy in zombiesWhoHeard)
+        {
+            // use either Send Message or GetComponent and tell this enemy he heard something
+            int r = UnityEngine.Random.Range(4, 10);
+            double theta = UnityEngine.Random.Range(0, 360) * Math.PI / 180.0;
+            float a = (float)Math.Cos(theta) * r;
+            float b = (float)Math.Sin(theta) * r;
+            GenericAgent zombie = enemy.gameObject.GetComponent<GenericAgent>();
+            zombie.nextPos = new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b);
+        }
         Destroy(gameObject);
+
     }
 }
