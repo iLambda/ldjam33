@@ -146,7 +146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &231176628
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ Transform:
   - {fileID: 710926342}
   - {fileID: 1532385213}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &445342398
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &445342404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &710926341
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +611,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &1430512383
 Transform:
   m_ObjectHideFlags: 0
@@ -622,7 +623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1430512384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +639,8 @@ MonoBehaviour:
   Action2Prefab: {fileID: 191702, guid: 32da6d17bb78f034fb6f2fb5a5e33d29, type: 2}
   xySpeed: 8
   zoomSpeed: 32
+  chargeAttrack: 0
+  chargeRepulse: 0
 --- !u!1 &1532385208
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,9 +763,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombiePrefab: {fileID: 100600, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
-  HumanPrefab: {fileID: 188198, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+  HumanPrefab: {fileID: 189414, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
   ZombieSpawn: 50
-  HumanSpawn: 0
+  HumanSpawn: 50
   RandomSeed: 0
   Boundaries:
     serializedVersion: 2
@@ -781,7 +784,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1746662752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,6 +798,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Speed: 1
+--- !u!1001 &1893218054
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.17360926
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 8.44444084
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467508, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2107345072
 GameObject:
   m_ObjectHideFlags: 0
