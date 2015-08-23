@@ -18,7 +18,7 @@ public class LambdaHuman : GenericAgent
     public GameObject transformationPrefab;
     public void Start()
     {
-        speed = UnityEngine.Random.Range(15, 20 ) / 100.0f;  //TODO set human speed value
+        speed = UnityEngine.Random.Range(70, 120 ) / 100.0f;  //TODO set human speed value
         weapon = Weapons.GetWeapon(Weapons.Weapon.Gun);
         state = States.Idle;
         target = null;

@@ -7,13 +7,9 @@ class Attractor : MonoBehaviour
     //attributes
     public float hearRange = 10.0f; // TODO adjust this value
     int zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
-    public float timer;
+    public float timer = 5.0f;
     public Collider[] zombiesWhoHeard;
 
-    public void Start()
-    {
-        timer = 5.0f;
-    }
 
     public void Update()
     {
@@ -52,5 +48,11 @@ class Attractor : MonoBehaviour
         }
         Destroy(gameObject);
 
+    }
+
+    public void SetTime(float chargetime)
+    {
+        timer = 4*chargetime;
+        Debug.Log("chargetime " + timer);
     }
 }

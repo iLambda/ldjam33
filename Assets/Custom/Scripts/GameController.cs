@@ -46,10 +46,11 @@ public class GameController : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown(0)) {
-			chargeAttrack += Time.deltaTime;
+            chargeAttrack = Time.time;
 
 		}
 		if (Input.GetMouseButtonUp (0)) {
+            chargeAttrack = Time.time - chargeAttrack;
 			RaycastHit hit = new RaycastHit();
 			bool hoverUi = (EventSystem.current != null) && EventSystem.current.IsPointerOverGameObject();
 			
@@ -58,16 +59,18 @@ public class GameController : MonoBehaviour {
 				//if (hit.collider.GetComponent<ActionReceiver>() != null)
 				{
 					var action = Instantiate(ActionPrefab, new Vector3(hit.point.x, -1, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                    action.SendMessage("SetTime", chargeAttrack);
 				}
 			}
 			chargeAttrack = 0.0f;
 		}
 
-		if (Input.GetMouseButtonUp (1)) {
-			chargeRepulse += Time.deltaTime;
+		if (Input.GetMouseButtonDown (1)) {
+			chargeRepulse = Time.time;
 		}
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonUp(1))
         {
+            chargeRepulse = Time.time - chargeRepulse;
             RaycastHit hit = new RaycastHit();
             bool hoverUi = (EventSystem.current != null) && EventSystem.current.IsPointerOverGameObject();
 
@@ -77,9 +80,9 @@ public class GameController : MonoBehaviour {
                 //if (hit.collider.GetComponent<ActionReceiver>() != null)
                 
                     var action = Instantiate(Action2Prefab, new Vector3(hit.point.x, -1, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
-                
+                    action.SendMessage("SetTime", chargeRepulse);
             }
-			chargeRepulse = 0.0f;
+			
         }
 	}
 }

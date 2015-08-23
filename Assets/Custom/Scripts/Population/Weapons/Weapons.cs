@@ -8,9 +8,9 @@ public class Weapons: MoveBehavior
 
 	public void Awake ()
 	{// cooldown (s), range, damage, contagion
-        type.Add(Weapon.Fist, new GenericWeapon(1, 1, 20)); // TODO Gamedesign Values subject to future changes
-		type.Add(Weapon.Gun, new GenericWeapon (0.5, 15, 10)); //TODO Gamedesign Values subject to future changes
-        type.Add(Weapon.Bite, new GenericWeapon(1, 1, 5, 8)); //TODO Gamedesign Values subject to future changes
+        type.Add(Weapon.Fist, new GenericWeapon(1, 1, 50)); // TODO Gamedesign Values subject to future changes
+		type.Add(Weapon.Gun, new GenericWeapon (0.5, 15, 25)); //TODO Gamedesign Values subject to future changes
+        type.Add(Weapon.Bite, new GenericWeapon(1, 1, 30, 40)); //TODO Gamedesign Values subject to future changes
 	}
 
 	public static GenericWeapon GetWeapon(Weapon n){
