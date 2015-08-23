@@ -26,7 +26,7 @@ class Deflector : MonoBehaviour
             // use either Send Message or GetComponent and tell this enemy he heard something
             GenericAgent zombie = enemy.gameObject.GetComponent<GenericAgent>();
             var heading = zombie.transform.position - transform.position;
-            zombie.nextPos = new Vector3(heading.x, -1, heading.z) ;
+			zombie.SetDestination(new Vector3(heading.x, -1, heading.z));
         }
         if (timer >= 0)
         {
@@ -50,7 +50,7 @@ class Deflector : MonoBehaviour
             float a = (float)Math.Cos(theta) * r;
             float b = (float)Math.Sin(theta) * r;
             GenericAgent zombie = enemy.gameObject.GetComponent<GenericAgent>();
-            zombie.nextPos = new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b);
+			zombie.SetDestination(new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b));
         }
         Destroy(gameObject);
 
