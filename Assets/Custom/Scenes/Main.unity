@@ -262,7 +262,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 445342398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -624,7 +624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPrefab: {fileID: 0}
-  speed: 8
+  xySpeed: 8
+  zoomSpeed: 32
 --- !u!1 &1506014778
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,9 +892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4612a71137c5334a80b5cb42e18a482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombiePrefab: {fileID: 111782, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
-  HumanPrefab: {fileID: 146910, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
-  ZombieSpawn: 75
+  ZombiePrefab: {fileID: 139084, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
+  HumanPrefab: {fileID: 167910, guid: f6d7ad7a718af5a4ca1958e719cc72e0, type: 2}
+  ZombieSpawn: 50
   HumanSpawn: 50
   RandomSeed: 0
   Boundaries:

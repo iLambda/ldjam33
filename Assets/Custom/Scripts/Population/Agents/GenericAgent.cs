@@ -19,7 +19,7 @@ public class GenericAgent: MonoBehaviour
     
 
     //temp attributes
-    public Vector3 nextPos = Vector3.zero;
+	public Vector3 nextPos = Vector3.zero;
 
 
 	public void Update(){
@@ -74,19 +74,19 @@ public class GenericAgent: MonoBehaviour
 
     public virtual void Move()
     {
-        float fracJourney = 1.5f;
-        if ((nextPos.Equals(Vector3.zero)) || transform.position.Equals(nextPos))
+		if ((nextPos.Equals(Vector3.zero)) || Vector3.Distance(transform.position, nextPos) < 0.25f)
         {
             //TODO write random move function + obstacle avoidance
             int r = UnityEngine.Random.Range(1, 3);
             double theta = UnityEngine.Random.Range(0, 360) * Math.PI / 180.0;
             float a = (float)Math.Cos(theta) * r;
             float b = (float)Math.Sin(theta) * r;
-            nextPos = new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b);
+			nextPos = new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b);
+			transform.LookAt(nextPos);
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, nextPos, fracJourney);
+			transform.position = Vector3.Lerp(transform.position, nextPos, speed * Time.deltaTime);
         }
 
     }

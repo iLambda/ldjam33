@@ -19,7 +19,7 @@ public class Zombie : GenericAgent
 	public void Start(){
         fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
         biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
-		speed = 0.5f; //TODO set zombie speed value
+		speed = 10f; //TODO set zombie speed value
         state = States.Idle;
         target = null;
         targetTag = "human";

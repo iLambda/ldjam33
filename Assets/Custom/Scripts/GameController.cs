@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour {
 	
 	public GameObject ActionPrefab;
-	public float speed = 8.0f;
+	public float xySpeed = 8.0f;
+	public float zoomSpeed = 16.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,19 +19,27 @@ public class GameController : MonoBehaviour {
 
 		if (Input.GetAxis ("Vertical") > 0) 
 		{
-			cameraPosition.transform.Translate(new Vector3(0, 0, Time.deltaTime * speed), Space.World);
+			cameraPosition.transform.Translate(new Vector3(0, 0, Time.deltaTime * xySpeed), Space.World);
 		}
 		else if (Input.GetAxis ("Vertical") < 0) 
 		{
-			cameraPosition.transform.Translate(new Vector3(0, 0, -Time.deltaTime * speed), Space.World);
+			cameraPosition.transform.Translate(new Vector3(0, 0, -Time.deltaTime * xySpeed), Space.World);
 		}		
 		if (Input.GetAxis ("Horizontal") > 0) 
 		{
-			cameraPosition.transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0), Space.World);
+			cameraPosition.transform.Translate(new Vector3(Time.deltaTime * xySpeed, 0, 0), Space.World);
 		}
 		else if (Input.GetAxis ("Horizontal") < 0) 
 		{
-			cameraPosition.transform.Translate(new Vector3(-Time.deltaTime * speed, 0, 0), Space.World);
+			cameraPosition.transform.Translate(new Vector3(-Time.deltaTime * xySpeed, 0, 0), Space.World);
+		}		
+		if (Input.GetAxis ("Mouse ScrollWheel") > 0) 
+		{
+			cameraPosition.transform.Translate(new Vector3(0, -Time.deltaTime * zoomSpeed, 0), Space.World);
+		}
+		else if (Input.GetAxis ("Mouse ScrollWheel") < 0) 
+		{
+			cameraPosition.transform.Translate(new Vector3(0, +Time.deltaTime * zoomSpeed, 0), Space.World);
 		}
 
 		if (Input.GetMouseButtonDown(0)) {
