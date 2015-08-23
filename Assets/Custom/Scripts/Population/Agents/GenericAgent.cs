@@ -16,11 +16,13 @@ public class GenericAgent: MonoBehaviour
     public int healthPoints;
     public int humanityRate;
     public double cooldown;
+    // The boundaries
+    public Vector3 worldBoundsMin = new Vector3(-250,-1,-250);
+    public Vector3 worldBoundsMax = new Vector3(250, -1, 250);
     
 
     //temp attributes
 	public Vector3 nextPos = Vector3.zero;
-
 
 	public void Update(){
         if (cooldown >= -1)
@@ -82,7 +84,6 @@ public class GenericAgent: MonoBehaviour
             float a = (float)Math.Cos(theta) * r;
             float b = (float)Math.Sin(theta) * r;
 			nextPos = new Vector3(transform.position.x + a, transform.position.y, transform.position.z + b);
-
 			float tempX = transform.rotation.eulerAngles.x;
 			transform.LookAt(nextPos);
 			// compensating mesh flaw, it's awful, but it's works
@@ -90,7 +91,7 @@ public class GenericAgent: MonoBehaviour
         }
         else
         {
-			transform.position = Vector3.Lerp(transform.position, nextPos, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, nextPos, speed * Time.deltaTime);
         }
 
     }
@@ -104,5 +105,14 @@ public class GenericAgent: MonoBehaviour
     public virtual void LiveOrDie()
     { //does nothing    
 	}
+
+    public Vector3 ClampVector3(Vector3 value, Vector3 mins, Vector3 maxs)
+    {
+        value.x = Mathf.Clamp(value.x, mins.x, maxs.x);
+        value.y = Mathf.Clamp(value.y, mins.y, maxs.y);
+        value.z = Mathf.Clamp(value.z, mins.z, maxs.z);
+
+        return value;
+    }
 }
 
