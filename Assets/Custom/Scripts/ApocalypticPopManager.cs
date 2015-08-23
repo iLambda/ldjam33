@@ -6,11 +6,12 @@ using System.Linq;
 
 public class ApocalypticPopManager : MonoBehaviour {
 
-    // The simple citizen prefab
-    public GameObject CitizenPrefab1;
-    public GameObject CitizenPrefab2;
-    // The number of citizens spawned
-    public int SpawnCount = 50;
+    // The humans and zombies prefab
+    public GameObject ZombiePrefab;
+    public GameObject HumanPrefab;
+    // The number of spawned
+	public int ZombieSpawn = 50;
+	public int HumanSpawn = 50;
     // The seed used
     public int RandomSeed = 0;
     // The boundaries
@@ -23,28 +24,22 @@ public class ApocalypticPopManager : MonoBehaviour {
         // Setting the seed
         UnityEngine.Random.seed = RandomSeed;
 
-        // Spawning citizens
-        for (int c = 0; c < 750; c++)
+        // Spawning humans
+		for (int c = 0; c < HumanSpawn; c++)
         {
             // Spawning a citizen
-            var citizen = Instantiate(CitizenPrefab1, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 1, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(0, 0, 0)) as GameObject;
-            // Set as a parent
+			var citizen = Instantiate(HumanPrefab, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 0.0f, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(270, 0, 0)) as GameObject;
+			// Set as a parent270
             citizen.transform.SetParent(transform);
-
-            // Setting behavior
-            var props = citizen.GetComponent<MoveBehavior>();
-            //props.Speed = UnityEngine.Random.Range(1f, 5f);
         }
-        for (int c = 0; c < 250; c++)
+		
+		// Spawning humans
+		for (int c = 0; c < ZombieSpawn; c++)
         {
-            var citizen = Instantiate(CitizenPrefab2, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 1, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(0, 0, 0)) as GameObject;
+			var citizen = Instantiate(ZombiePrefab, new Vector3(UnityEngine.Random.Range(Boundaries.min.x, Boundaries.max.x), 0.0f, UnityEngine.Random.Range(Boundaries.min.y, Boundaries.max.y)), Quaternion.Euler(270, 0, 0)) as GameObject;
 
             // Set as a parent
             citizen.transform.SetParent(transform);
-
-            // Setting behavior
-            var props = citizen.GetComponent<MoveBehavior>();
-            //props.Speed = UnityEngine.Random.Range(1f, 5f);
         }
 	}
 	
