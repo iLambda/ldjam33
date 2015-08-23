@@ -50,7 +50,7 @@ public class LambdaHuman : GenericAgent
         {
             //this object become of type zombie
             Debug.Log("OH NOOOO I TURNED INTO A ZOMBIE !!!!");
-            GameObject.Instantiate(transformationPrefab, this.transform.position, this.transform.rotation);
+			GameObject.Instantiate(transformationPrefab, this.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
             Destroy(gameObject);
         }
         else if (healthPoints < 0)
