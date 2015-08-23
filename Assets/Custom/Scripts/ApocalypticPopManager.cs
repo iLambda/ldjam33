@@ -11,9 +11,19 @@ public class ApocalypticPopManager : MonoBehaviour {
     public GameObject HumanPrefab;
     // The number of spawned
 	public int ZombieSpawn = 50;
-	public int HumanSpawn = 50;
+	//public int HumanSpawn = 50;
     // The seed used
     public int RandomSeed = 0;
+    private float xMax;
+    private float xMin;
+    private float zMax;
+    private float zMin;
+    //Spaw parameters
+    private float timer = 0.0f;
+    public Vector3 centerpos1 = Vector3.zero;
+    public Vector3 centerpos2 = Vector3.zero;
+    public Vector3 centerpos3 = Vector3.zero;
+    public int HumanSpawn = 0;
         
 	void Start () 
     {
@@ -22,50 +32,88 @@ public class ApocalypticPopManager : MonoBehaviour {
         Vector3 cameraPosition = mainCamera.transform.position;
         float xDist = mainCamera.aspect * mainCamera.orthographicSize;
         float zDist = mainCamera.orthographicSize;
-        float xMax = cameraPosition.x + xDist/2;
-        float xMin = cameraPosition.x - xDist/2;
-        float zMax = cameraPosition.z;
-        float zMin = cameraPosition.z - zDist;
+        xMax = cameraPosition.x + xDist;
+        xMin = cameraPosition.x - xDist;
+        zMax = cameraPosition.z + zDist;
+        zMin = cameraPosition.z - zDist;
 
-
+        //Setting RandomSeed
         if (RandomSeed == 0)
             RandomSeed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
         // Setting the seed
         UnityEngine.Random.seed = RandomSeed;
-
-
-        /*// Spawning humans
-		for (int c = 0; c < HumanSpawn; c++)
-        {
-            // Spawning a citizen
-            var citizen = Instantiate(HumanPrefab, new Vector3(UnityEngine.Random.Range(worldBoundsMin.x, worldBoundsMax.x), -1.0f, UnityEngine.Random.Range(worldBoundsMin.z, worldBoundsMax.z)), Quaternion.Euler(0, 0, 0)) as GameObject;
-			// Set as a parent270
-            citizen.transform.SetParent(transform);
-        }*/
-        
+      
 		
 		// Spawning zombies
 		for (int c = 0; c < ZombieSpawn; c++)
         {
-			var citizen = Instantiate(ZombiePrefab, new Vector3(UnityEngine.Random.Range(xMin, xMax), -1.0f, UnityEngine.Random.Range(zMin, zMax)), Quaternion.Euler(0, 0, 0)) as GameObject;
+			var citizen = Instantiate(ZombiePrefab, new Vector3(UnityEngine.Random.Range(xMin+zDist/2, xMax-zDist/2), -1.0f, UnityEngine.Random.Range(zMin, zMax-zDist)), Quaternion.Euler(0, 0, 0)) as GameObject;
 
             // Set as a parent
             citizen.transform.SetParent(transform);
         }
-	}
-	
-	void Update () 
-    {
-	    
-	}
-    
 
-    public float GetPotential(float x, float y)
-    {
-        // Get potential from children
-        var childrenPotential = gameObject.GetComponentsInChildren<IPotential>();
+        //Setting spawning positions
+        centerpos1 = new Vector3(xMin+ xMax/4, -1.0f, zMax/2);
+        centerpos2 = new Vector3(xMax - xMax/4, -1.0f, zMax/2);
+        centerpos3 = new Vector3(xMax/2, -1.0f, zMax - zMax/4);
+	}
+     
+    public void Update () {
+         if (StatusUpdater.humanCount < 1)
+         {
+             Debug.Log("No Humans yet");
+             if (StatusUpdater.zombiesCount < 75)
+             {
+                 Spawn(1);
+             }
+             if (StatusUpdater.zombiesCount < 150)
+             {
+                 Spawn(2);
+             }
+             else
+             {
+                 Spawn(3);
+             }
+         }
+    }
+     
+    public void Spawn(int number){
+        Vector3 spawnPosition = Vector3.zero;
+        int humansNumber = 0;
+        //choose the number of humans
+        switch(number){
+            case 1:
+                humansNumber = UnityEngine.Random.Range(5,15);
+                break;
+            case 2 :
+                humansNumber = UnityEngine.Random.Range(20,30);
+                break;
+            case 3:
+                humansNumber = UnityEngine.Random.Range(30,50);
+                break;
+        }
 
-        // Return value 
-        return childrenPotential != null ? -childrenPotential.Select(Pot => Pot.GetPotential(x, y)).Sum() : 0f;
+        //choose a random spawn position
+        int randomPick = UnityEngine.Random.Range(1,4);
+        switch(randomPick){
+            case 1:
+                spawnPosition = centerpos1;
+                break;
+            case 2 :
+                spawnPosition = centerpos2;
+                break;
+            case 3:
+                spawnPosition = centerpos3;
+                break;
+        }
+        for (int c = 0; c < humansNumber; c++)
+        {
+            // Spawning a citizen
+            var citizen = Instantiate(HumanPrefab, new Vector3(UnityEngine.Random.Range(spawnPosition.x-xMax/4, spawnPosition.x+xMax/4), -1.0f, UnityEngine.Random.Range(spawnPosition.z-zMax/4, spawnPosition.z-zMax/4)), Quaternion.Euler(0, 0, 0)) as GameObject;
+			// Set as a parent270
+            citizen.transform.SetParent(transform);
+        }
+
     }
 }
