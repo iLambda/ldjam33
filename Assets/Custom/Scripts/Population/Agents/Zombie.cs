@@ -19,7 +19,7 @@ public class Zombie : GenericAgent
 	public void Start(){
         fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
         biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
-		speed = UnityEngine.Random.Range(30,50)/100.0f; //TODO set zombie speed value
+		speed = UnityEngine.Random.Range(2,5)/100.0f; //TODO set zombie speed value
         state = States.Idle;
         target = null;
         targetTag = "human";
@@ -52,7 +52,7 @@ public class Zombie : GenericAgent
 
         if ((cooldown < 0) && (weaponUsed.Range >= distance))
         {
-            Debug.Log(" I, zombie tried to attack " + targetTag);
+            //Debug.Log(" I, zombie tried to attack " + targetTag);
             cooldown = weaponUsed.CoolDown;
             return weaponUsed;
         }

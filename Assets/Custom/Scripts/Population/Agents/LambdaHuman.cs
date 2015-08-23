@@ -18,7 +18,7 @@ public class LambdaHuman : GenericAgent
     public GameObject transformationPrefab;
     public void Start()
     {
-        speed = speed = UnityEngine.Random.Range(100, 200) / 100.0f; ; //TODO set zombie speed value
+        speed = speed = UnityEngine.Random.Range(5, 10 ) / 100.0f; ; //TODO set zombie speed value
         weapon = Weapons.GetWeapon(Weapons.Weapon.Gun);
         state = States.Idle;
         target = null;
@@ -38,7 +38,7 @@ public class LambdaHuman : GenericAgent
     {
         if ((cooldown < 0) && (weapon.Range >= distance))
         {
-            Debug.Log(" I, human tried to attack " + targetTag);
+            //Debug.Log(" I, human tried to attack " + targetTag);
             cooldown = weapon.CoolDown;
             return weapon;
         }
