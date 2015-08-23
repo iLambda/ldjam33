@@ -122,7 +122,7 @@ MonoBehaviour:
   humanityRate: 0
   cooldown: 0
   nextPos: {x: 0, y: 0, z: 0}
-  transformationPrefab: {fileID: 139084, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
+  transformationPrefab: {fileID: 188466, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
 --- !u!136 &13621174
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -142,7 +142,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: transformationPrefab
+      value: 
+      objectReference: {fileID: 188466, guid: b1b25211a4aa85543b4642e06b40f43b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188198}
