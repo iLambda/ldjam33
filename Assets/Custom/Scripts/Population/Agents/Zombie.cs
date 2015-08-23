@@ -52,7 +52,7 @@ public class Zombie : GenericAgent
 
         if ((cooldown < 0) && (weaponUsed.Range >= distance))
         {
-            //Debug.Log(" I, zombie tried to attack " + targetTag);
+            Debug.Log(" I, zombie tried to attack " + targetTag + "at distance " + distance);
             cooldown = weaponUsed.CoolDown;
             return weaponUsed;
         }
