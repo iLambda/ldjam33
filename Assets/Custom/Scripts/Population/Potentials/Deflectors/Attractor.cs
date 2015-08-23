@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-class Deflector : MonoBehaviour
+class Attractor : MonoBehaviour
 {
     //attributes
     public float hearRange = 10.0f; // TODO adjust this value
@@ -18,8 +18,8 @@ class Deflector : MonoBehaviour
         {
             // use either Send Message or GetComponent and tell this enemy he heard something
             GenericAgent zombie = enemy.gameObject.GetComponent<GenericAgent>();
-            var heading = zombie.transform.position - transform.position;
-            zombie.nextPos = heading ;
+            var heading = transform.position;
+            zombie.nextPos = heading;
         }
 
     }

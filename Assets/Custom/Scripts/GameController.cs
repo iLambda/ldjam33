@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour {
 	
 	public GameObject ActionPrefab;
+    public GameObject Action2Prefab;
 	public float xySpeed = 8.0f;
 	public float zoomSpeed = 16.0f;
 
@@ -54,5 +55,19 @@ public class GameController : MonoBehaviour {
 				}
 			}
 		}
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit hit = new RaycastHit();
+            bool hoverUi = (EventSystem.current != null) && EventSystem.current.IsPointerOverGameObject();
+
+            if (!hoverUi
+                && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                if (hit.collider.GetComponent<ActionReceiver>() != null)
+                {
+                    var action = Instantiate(Action2Prefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                }
+            }
+        }
 	}
 }
