@@ -65,7 +65,7 @@ public class GenericAgent: MonoBehaviour
         if (other.gameObject.CompareTag(targetTag))
         {
             float distance = Vector3.Distance(transform.position, other.attachedRigidbody.position);
-            GenericWeapon usedWeapon = Attack(distance);
+			GenericWeapon usedWeapon = Attack(distance, other.attachedRigidbody);
             GenericAgent otherAgent = other.gameObject.GetComponent<GenericAgent>();
             if ((usedWeapon != null) && (otherAgent != null))
             {
@@ -81,8 +81,13 @@ public class GenericAgent: MonoBehaviour
 	public void SetDestination(Vector3 destination) 
 	{
 		nextPos = destination;
+		LookAt(nextPos);
+	}
+
+	public void LookAt(Vector3 destination) 
+	{
 		float tempX = transform.rotation.eulerAngles.x;
-		transform.LookAt(nextPos);
+		transform.LookAt(destination);
 		// compensating mesh flaw, it's awful, but it's works
 		transform.rotation = Quaternion.Euler(tempX, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 	}
@@ -107,7 +112,7 @@ public class GenericAgent: MonoBehaviour
 
     }
 
-    public virtual GenericWeapon Attack(float distance)
+	public virtual GenericWeapon Attack(float distance, Rigidbody target)
     {
         //does nothing
         return null;

@@ -15,7 +15,9 @@ public class LambdaHuman : GenericAgent
 {
     private float elapsedTime = 0;
     public GenericWeapon weapon;
-    public GameObject transformationPrefab;
+	public GameObject transformationPrefab;
+	public GameObject bulletPrefab;
+
     public void Start()
     {
 		base.Start();
@@ -46,11 +48,17 @@ public class LambdaHuman : GenericAgent
         base.Move();
     }
 
-    public override GenericWeapon Attack(float distance)
+	public override GenericWeapon Attack(float distance, Rigidbody target)
     {
         if ((cooldown < 0) && (weapon.Range >= distance))
         {
             //Debug.Log(" I, human tried to attack " + targetTag);
+			GameObject go = (GameObject) GameObject.Instantiate(bulletPrefab, this.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+			Rigidbody bullet = go.GetComponent<Rigidbody>();
+			Vector3 velocity = target.position - this.transform.position;
+			velocity.Normalize();
+			bullet.AddForce(velocity * 10, ForceMode.VelocityChange);
+			LookAt(target.position);
             cooldown = weapon.CoolDown;
             return weapon;
         }

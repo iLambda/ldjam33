@@ -1013,8 +1013,12 @@ MonoBehaviour:
   healthPoints: 0
   humanityRate: 0
   cooldown: 0
+  distanceToClosestSound: 0
+  worldBoundsMin: {x: -250, y: -1, z: -250}
+  worldBoundsMax: {x: 250, y: -1, z: 250}
   nextPos: {x: 0, y: 0, z: 0}
   transformationPrefab: {fileID: 160360, guid: a0fadf297a121eb4e8ca291587df2566, type: 2}
+  bulletPrefab: {fileID: 133116, guid: 25c13d230fa2493479c75df92605c6f5, type: 2}
 --- !u!136 &13625200
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1097,6 +1101,10 @@ Prefab:
       propertyPath: transformationPrefab
       value: 
       objectReference: {fileID: 160360, guid: a0fadf297a121eb4e8ca291587df2566, type: 2}
+    - target: {fileID: 0}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 133116, guid: 25c13d230fa2493479c75df92605c6f5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 189414}

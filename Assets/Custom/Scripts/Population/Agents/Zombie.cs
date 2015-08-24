@@ -36,7 +36,7 @@ public class Zombie : GenericAgent
         base.Move();
     }
 
-    public override GenericWeapon Attack(float distance)
+	public override GenericWeapon Attack(float distance, Rigidbody target)
     {
         GenericWeapon weaponUsed;
         int roll_dice = UnityEngine.Random.Range(1, 101);
