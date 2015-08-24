@@ -18,6 +18,7 @@ public class Zombie : GenericAgent
     public GenericWeapon biteWeapon;
 	public void Start(){
 		base.Start();
+        distanceToClosestSound = Mathf.Infinity;
         fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
         biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
 		speed = UnityEngine.Random.Range(40,60)/100.0f; //TODO set zombie speed value
@@ -58,6 +59,11 @@ public class Zombie : GenericAgent
             return weaponUsed;
         }
         return null;
+    }
+
+    public override void SetDistanceToClosestSound(float distance)
+    {
+        distanceToClosestSound = distance;
     }
 
     public override void LiveOrDie()

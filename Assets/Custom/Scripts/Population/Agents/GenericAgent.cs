@@ -16,6 +16,7 @@ public class GenericAgent: MonoBehaviour
     public int healthPoints;
     public int humanityRate;
     public double cooldown;
+    public float distanceToClosestSound;
     // The boundaries
     public Vector3 worldBoundsMin = new Vector3(-250,-1,-250);
     public Vector3 worldBoundsMax = new Vector3(250, -1, 250);
@@ -123,6 +124,11 @@ public class GenericAgent: MonoBehaviour
         value.z = Mathf.Clamp(value.z, mins.z, maxs.z);
 
         return value;
+    }
+
+    public virtual void SetDistanceToClosestSound(float distance)
+    {
+        //does nothing
     }
 
     private void EnforceBounds()
