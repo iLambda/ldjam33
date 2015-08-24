@@ -89,13 +89,13 @@ public class ApocalypticPopManager : MonoBehaviour {
         //choose the number of humans
         switch(number){
             case 1:
-                humansNumber = UnityEngine.Random.Range(1,5);
+                humansNumber = UnityEngine.Random.Range(3,10);
                 break;
             case 2 :
-                humansNumber = UnityEngine.Random.Range(5,10);
+                humansNumber = UnityEngine.Random.Range(10,20);
                 break;
             case 3:
-                humansNumber = UnityEngine.Random.Range(10,15);
+                humansNumber = UnityEngine.Random.Range(20,40);
                 break;
         }
 
