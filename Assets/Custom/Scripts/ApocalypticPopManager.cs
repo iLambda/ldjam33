@@ -68,11 +68,11 @@ public class ApocalypticPopManager : MonoBehaviour {
          if ( (StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200) )
          {
              Debug.Log("No Humans yet");
-             if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 75)
+             if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 120)
              {
                  Spawn(1);
              }
-             if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 150)
+             else if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 160)
              {
                  Spawn(2);
              }
