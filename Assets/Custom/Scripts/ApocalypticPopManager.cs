@@ -85,7 +85,7 @@ public class ApocalypticPopManager : MonoBehaviour {
                  Spawn(3);
              }
          }
-         if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200)
+         if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount > 200)
          {
               isShowing = !isShowing;
               menu.SetActive(isShowing);
