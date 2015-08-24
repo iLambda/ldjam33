@@ -46,6 +46,10 @@ public class GameController : MonoBehaviour {
 		}
 		KeepCameraInBound();
 
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Application.LoadLevel("MainMenu");
+		}
+
 		if (Input.GetMouseButtonDown(0)) {
             chargeAttrack = Time.time;
 
