@@ -37,6 +37,7 @@ public class GenericAgent: MonoBehaviour
 	}
 
 	public void Update(){
+        if (Time.timeScale == 0) return;
         if (cooldown >= -1)
         {
             cooldown -= UnityEngine.Time.deltaTime; // TODO decrement temporally

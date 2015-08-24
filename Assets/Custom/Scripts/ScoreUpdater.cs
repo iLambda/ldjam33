@@ -13,7 +13,7 @@ public class ScoreUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		totalZombiesCountText.text = StatusUpdater.contaminatedCount.ToString();
+		totalZombiesCountText.text = StatusUpdater.zombiesCount.ToString();
 	}
 
 

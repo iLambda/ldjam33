@@ -69,6 +69,7 @@ public class ApocalypticPopManager : MonoBehaviour {
 	}
      
     public void Update () {
+        if (Time.timeScale == 0) return;
          if ( (StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount <= 200) )
          {
              Debug.Log("No Humans yet");

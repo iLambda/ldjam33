@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0) return;
 		Transform cameraPosition = this.gameObject.GetComponent<Transform> ();
 
 		if (Input.GetAxis ("Vertical") > 0) 

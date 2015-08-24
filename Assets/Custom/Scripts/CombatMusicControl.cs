@@ -24,6 +24,7 @@ public class CombatMusicControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0) return;
         if ((StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200))
         {
             //Debug.Log("No Humans yet");
