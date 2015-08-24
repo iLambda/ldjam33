@@ -93,13 +93,38 @@ public class GameController : MonoBehaviour {
 
 	private void KeepCameraInBound() 
 	{
+		Collider world = GameObject.Find("GameArea").GetComponent<Collider>();
+		float newX = gameObject.transform.position.x; 
+		float newY = gameObject.transform.position.y; 
+		float newZ = gameObject.transform.position.z; 
+
+		if (gameObject.transform.position.x < world.bounds.min.x) 
+		{
+			newX = world.bounds.min.x;
+		} 
+		else if (gameObject.transform.position.x > world.bounds.max.x) 
+		{
+			newX = world.bounds.max.x;
+		}
+		
+		if (gameObject.transform.position.z < world.bounds.min.z) 
+		{
+			newZ = world.bounds.min.z;
+		} 
+		else if (gameObject.transform.position.z > world.bounds.max.z) 
+		{
+			newZ = world.bounds.max.z;
+		}
+		
 		if (gameObject.transform.position.y < 5) 
 		{
-			gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 5);
+			newY = 5;
 		} 
 		else if (gameObject.transform.position.y > 50) 
 		{
-			gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 50);
+			newY = 50;
 		}
+		
+		gameObject.transform.position = new Vector3(newX, newY, newZ);
 	}
 }

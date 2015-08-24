@@ -2488,7 +2488,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df18539cb83d59143839f9e51569d442, type: 3}
   - {fileID: 8300000, guid: 250ee694b1e90a8469573de3620eced5, type: 3}
   stingSource: {fileID: 8712448}
-  timeBetweenLoop: 30
+  timeBetweenLoop: 20
   waitLoop: 0
 --- !u!1001 &1397347195
 Prefab:
