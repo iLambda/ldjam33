@@ -13,6 +13,7 @@ public class StatusUpdater : MonoBehaviour {
 	private UnityEngine.UI.Text humansCountText;
 	private UnityEngine.UI.Text timeCountText;
 	private UnityEngine.UI.Text contaminatedCountText;
+    private UnityEngine.UI.Text totalZombiesCountText;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,8 @@ public class StatusUpdater : MonoBehaviour {
 		zombiesCountText = (UnityEngine.UI.Text) GameObject.Find ("ZombiesCountText").GetComponent<Text>(); 
 		humansCountText = (UnityEngine.UI.Text) GameObject.Find ("HumansCountText").GetComponent<Text>(); 
 		timeCountText = (UnityEngine.UI.Text) GameObject.Find ("TimeCountText").GetComponent<Text>(); 
-		contaminatedCountText = (UnityEngine.UI.Text) GameObject.Find ("ContaminedCountText").GetComponent<Text>(); 
+		contaminatedCountText = (UnityEngine.UI.Text) GameObject.Find ("ContaminedCountText").GetComponent<Text>();
+        totalZombiesCountText = (UnityEngine.UI.Text)GameObject.Find("score").GetComponent<Text>(); 
 	}
 	
 	// Update is called once per frame
@@ -29,6 +31,7 @@ public class StatusUpdater : MonoBehaviour {
 		humansCountText.text = StatusUpdater.humanCount.ToString ();
 		timeCountText.text = StatusUpdater.timeCount.ToString ();
 		contaminatedCountText.text = StatusUpdater.contaminatedCount.ToString ();
+        totalZombiesCountText.text = StatusUpdater.contaminatedCount.ToString();
 	}
 
 

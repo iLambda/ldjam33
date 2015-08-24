@@ -9,6 +9,9 @@ public class ApocalypticPopManager : MonoBehaviour {
     // The humans and zombies prefab
     public GameObject ZombiePrefab;
     public GameObject HumanPrefab;
+    //game over show
+    public GameObject menu; // Assign in inspector
+    private bool isShowing;
     // The number of spawned
 	public int ZombieSpawn = 50;
 	//public int HumanSpawn = 50;
@@ -18,13 +21,14 @@ public class ApocalypticPopManager : MonoBehaviour {
     private float xMin;
     private float zMax;
     private float zMin;
-    //Spaw parameters
+    //Spawn parameters
     private float timer = 0.0f;
     public Vector3 centerpos1 = Vector3.zero;
     public Vector3 centerpos2 = Vector3.zero;
     public Vector3 centerpos3 = Vector3.zero;
     public Vector3 centerpos4 = Vector3.zero;
     public int HumanSpawn = 0;
+    
         
 	void Start () 
     {
@@ -65,14 +69,14 @@ public class ApocalypticPopManager : MonoBehaviour {
 	}
      
     public void Update () {
-         if ( (StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200) )
+         if ( (StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount <= 200) )
          {
              Debug.Log("No Humans yet");
-             if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 120)
+             if (StatusUpdater.zombiesCount < 120)
              {
                  Spawn(1);
              }
-             else if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 160)
+             else if (StatusUpdater.zombiesCount < 160)
              {
                  Spawn(2);
              }
@@ -80,6 +84,11 @@ public class ApocalypticPopManager : MonoBehaviour {
              {
                  Spawn(3);
              }
+         }
+         if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200)
+         {
+              isShowing = !isShowing;
+              menu.SetActive(isShowing);
          }
     }
      
