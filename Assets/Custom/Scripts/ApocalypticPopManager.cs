@@ -65,7 +65,7 @@ public class ApocalypticPopManager : MonoBehaviour {
 	}
      
     public void Update () {
-         if ( (StatusUpdater.humanCount < 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200) )
+         if ( (StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200) )
          {
              Debug.Log("No Humans yet");
              if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 75)
@@ -89,13 +89,13 @@ public class ApocalypticPopManager : MonoBehaviour {
         //choose the number of humans
         switch(number){
             case 1:
-                humansNumber = UnityEngine.Random.Range(5,15);
+                humansNumber = UnityEngine.Random.Range(1,5);
                 break;
             case 2 :
-                humansNumber = UnityEngine.Random.Range(20,30);
+                humansNumber = UnityEngine.Random.Range(5,10);
                 break;
             case 3:
-                humansNumber = UnityEngine.Random.Range(30,50);
+                humansNumber = UnityEngine.Random.Range(10,15);
                 break;
         }
 
