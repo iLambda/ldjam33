@@ -89,6 +89,7 @@ public class ApocalypticPopManager : MonoBehaviour {
          {
               isShowing = !isShowing;
               menu.SetActive(isShowing);
+              Time.timeScale = 0.0F;
          }
     }
      
