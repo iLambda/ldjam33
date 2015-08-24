@@ -439,8 +439,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430512378}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 21.7000008, z: 0}
+  m_LocalScale: {x: 2.5, y: 1, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -497,6 +497,7 @@ MonoBehaviour:
   centerpos1: {x: 0, y: 0, z: 0}
   centerpos2: {x: 0, y: 0, z: 0}
   centerpos3: {x: 0, y: 0, z: 0}
+  centerpos4: {x: 0, y: 0, z: 0}
   HumanSpawn: 0
 --- !u!4 &1746662751
 Transform:

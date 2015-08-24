@@ -23,6 +23,7 @@ public class ApocalypticPopManager : MonoBehaviour {
     public Vector3 centerpos1 = Vector3.zero;
     public Vector3 centerpos2 = Vector3.zero;
     public Vector3 centerpos3 = Vector3.zero;
+    public Vector3 centerpos4 = Vector3.zero;
     public int HumanSpawn = 0;
         
 	void Start () 
@@ -60,10 +61,11 @@ public class ApocalypticPopManager : MonoBehaviour {
         centerpos1 = new Vector3(xMin+ xMax/4, -1.0f, zMax/2);
         centerpos2 = new Vector3(xMax - xMax/4, -1.0f, zMax/2);
         centerpos3 = new Vector3(xMax/2, -1.0f, zMax - zMax/4);
+        centerpos4 = new Vector3(xMax/2, -1.0f, zMin + zMax / 4);
 	}
      
     public void Update () {
-         if (StatusUpdater.humanCount < 1)
+         if ( (StatusUpdater.humanCount < 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200) )
          {
              Debug.Log("No Humans yet");
              if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 75)
@@ -98,7 +100,8 @@ public class ApocalypticPopManager : MonoBehaviour {
         }
 
         //choose a random spawn position
-        int randomPick = UnityEngine.Random.Range(1,4);
+        int randomPick = 1;
+        randomPick = UnityEngine.Random.Range(1, 5);
         switch(randomPick){
             case 1:
                 spawnPosition = centerpos1;
@@ -109,9 +112,28 @@ public class ApocalypticPopManager : MonoBehaviour {
             case 3:
                 spawnPosition = centerpos3;
                 break;
+            case 4:
+                spawnPosition = centerpos4;
+                break;
         }
         for (int c = 0; c < humansNumber; c++)
         {
+            randomPick = UnityEngine.Random.Range(1, 5);
+            switch (randomPick)
+            {
+                case 1:
+                    spawnPosition = centerpos1;
+                    break;
+                case 2:
+                    spawnPosition = centerpos2;
+                    break;
+                case 3:
+                    spawnPosition = centerpos3;
+                    break;
+                case 4:
+                    spawnPosition = centerpos4;
+                    break;
+            }
             // Spawning a citizen
             var citizen = Instantiate(HumanPrefab, new Vector3(UnityEngine.Random.Range(spawnPosition.x-xMax/4, spawnPosition.x+xMax/4), -1.0f, UnityEngine.Random.Range(spawnPosition.z-zMax/4, spawnPosition.z-zMax/4)), Quaternion.Euler(0, 0, 0)) as GameObject;
 			// Set as a parent270
