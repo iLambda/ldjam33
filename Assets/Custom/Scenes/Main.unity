@@ -265,7 +265,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24341150, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: df18539cb83d59143839f9e51569d442, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 04f56795d96051f4e80123cd0b0fd8dd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .600000024
   m_Pitch: 1
@@ -335,7 +335,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24325372, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4062630b858acbf4e8a8ff2caaa5b75a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 85b8ce7679ad29d4da85a86d7580a540, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .5
   m_Pitch: 1
@@ -405,7 +405,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24394372, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9ee40389edea5b04b89dadabaab97022, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e822bdd5910a7544391f002e4b7eb3b2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .400000006
   m_Pitch: 1
@@ -487,7 +487,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24386334, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0a92d2213123ffa4d873f0d0de3e857b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f747c0d64972aad42ac819599afac2c4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -629,47 +629,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c72e1228058ec2d4d843d452fb52f128, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &973748151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 973748153}
-  - 182: {fileID: 973748152}
-  m_Layer: 0
-  m_Name: WindZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!182 &973748152
-WindZone:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973748151}
-  m_Enabled: 1
-  m_Mode: 0
-  m_Radius: 20
-  m_WindMain: 1
-  m_WindTurbulence: 1
-  m_WindPulseMagnitude: .5
-  m_WindPulseFrequency: .00999999978
---- !u!4 &973748153
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973748151}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
 --- !u!1 &1430512378
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +702,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &1430512383
 Transform:
   m_ObjectHideFlags: 0
@@ -909,4 +867,4 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
