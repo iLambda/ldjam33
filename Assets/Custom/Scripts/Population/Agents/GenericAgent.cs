@@ -19,10 +19,21 @@ public class GenericAgent: MonoBehaviour
     // The boundaries
     public Vector3 worldBoundsMin = new Vector3(-250,-1,-250);
     public Vector3 worldBoundsMax = new Vector3(250, -1, 250);
-    
 
     //temp attributes
 	public Vector3 nextPos = Vector3.zero;
+	private static Collider worldCollider = null;
+
+	public void Start() {
+		if (GenericAgent.worldCollider == null) 
+		{
+			GameObject world = GameObject.Find("GameArea");
+			if (world != null) 
+			{
+				GenericAgent.worldCollider = world.GetComponent<Collider>();
+			}
+		}
+	}
 
 	public void Update(){
         if (cooldown >= -1)
@@ -50,27 +61,19 @@ public class GenericAgent: MonoBehaviour
 	}
 
 	public void OnTriggerStay(Collider other){ //TODO create object collider
-        //Debug.Log("I " + targetTag + "saw " + other.tag);
         if (other.gameObject.CompareTag(targetTag))
         {
             float distance = Vector3.Distance(transform.position, other.attachedRigidbody.position);
             GenericWeapon usedWeapon = Attack(distance);
             GenericAgent otherAgent = other.gameObject.GetComponent<GenericAgent>();
-            //Debug.Log("generic agent is" + otherAgent.name);
             if ((usedWeapon != null) && (otherAgent != null))
             {
                 if (usedWeapon.Contagion > 0)
                 {
                     otherAgent.humanityRate -= usedWeapon.Contagion;
-                    //Debug.Log("Humanity left" + otherAgent.humanityRate);
                 }
                 otherAgent.healthPoints -= usedWeapon.Damages;
-                //Debug.Log("Lifepoints left" + otherAgent.healthPoints);
             }
-        }
-        else
-        {
-            //Debug.Log("I, "+ this.name +" am pacifist towards " + other.tag);
         }
 	}
 
@@ -124,18 +127,12 @@ public class GenericAgent: MonoBehaviour
 
     private void EnforceBounds()
     {
-        // 1
         Vector3 newPosition = transform.position;
-        Camera mainCamera = Camera.main;
-        Vector3 cameraPosition = mainCamera.transform.position;
 
-        // 2
-        float xDist = mainCamera.aspect * mainCamera.orthographicSize;
-        float zDist = mainCamera.orthographicSize;
-        float xMax = cameraPosition.x + xDist;
-        float xMin = cameraPosition.x - xDist;
-        float zMax = cameraPosition.z + zDist;
-        float zMin = cameraPosition.z - zDist;
+        float xMax = worldCollider.bounds.max.x;
+		float xMin = worldCollider.bounds.min.x;
+		float zMax = worldCollider.bounds.max.z;
+		float zMin = worldCollider.bounds.min.z;
 
         if (newPosition.x < xMin )
         {

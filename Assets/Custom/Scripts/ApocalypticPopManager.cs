@@ -30,12 +30,11 @@ public class ApocalypticPopManager : MonoBehaviour {
         // The boundaries
         Camera mainCamera = Camera.main;
         Vector3 cameraPosition = mainCamera.transform.position;
-        float xDist = mainCamera.aspect * mainCamera.orthographicSize;
-        float zDist = mainCamera.orthographicSize;
-        xMax = cameraPosition.x + xDist;
-        xMin = cameraPosition.x - xDist;
-        zMax = cameraPosition.z + zDist;
-        zMin = cameraPosition.z - zDist;
+		Collider worldCollider = GameObject.Find("GameArea").GetComponent<Collider>();
+		xMax = worldCollider.bounds.max.x;
+		xMin = worldCollider.bounds.min.x;
+		zMax = worldCollider.bounds.max.z;
+		zMin = worldCollider.bounds.min.z;
 
         //Setting RandomSeed
         if (RandomSeed == 0)
@@ -47,7 +46,11 @@ public class ApocalypticPopManager : MonoBehaviour {
 		// Spawning zombies
 		for (int c = 0; c < ZombieSpawn; c++)
         {
-			var citizen = Instantiate(ZombiePrefab, new Vector3(UnityEngine.Random.Range(xMin+zDist/2, xMax-zDist/2), -1.0f, UnityEngine.Random.Range(zMin, zMax-zDist)), Quaternion.Euler(0, 0, 0)) as GameObject;
+			var citizen = Instantiate(ZombiePrefab, 
+			                          new Vector3(UnityEngine.Random.Range(xMin+worldCollider.bounds.size.x/4, xMax-worldCollider.bounds.size.x/4), 
+			                                      -1.0f, 
+			                          UnityEngine.Random.Range(zMin+worldCollider.bounds.size.z/4, zMax-worldCollider.bounds.size.z/4)), 
+			                          Quaternion.Euler(0, 0, 0)) as GameObject;
 
             // Set as a parent
             citizen.transform.SetParent(transform);

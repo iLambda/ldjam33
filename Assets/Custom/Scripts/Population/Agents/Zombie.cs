@@ -17,6 +17,7 @@ public class Zombie : GenericAgent
     public GenericWeapon fistWeapon;
     public GenericWeapon biteWeapon;
 	public void Start(){
+		base.Start();
         fistWeapon = Weapons.GetWeapon(Weapons.Weapon.Fist);
         biteWeapon = Weapons.GetWeapon(Weapons.Weapon.Bite);
 		speed = UnityEngine.Random.Range(40,60)/100.0f; //TODO set zombie speed value
@@ -25,7 +26,7 @@ public class Zombie : GenericAgent
         targetTag = "human";
         healthPoints = 250;
         humanityRate = 0;
-		Debug.Log("Just started as a " + gameObject.tag);
+		//Debug.Log("Just started as a " + gameObject.tag);
 		StatusUpdater.zombiesCount++;
 	}
 
@@ -65,7 +66,7 @@ public class Zombie : GenericAgent
         {
             // TODO add this zombie death to the zombie counter
             Destroy(gameObject);
-			Debug.Log("OH NO I MET ZOMBIE'S DEATH :'( ");
+			//Debug.Log("OH NO I MET ZOMBIE'S DEATH :'( ");
 			StatusUpdater.zombiesCount--;
         }
     }
