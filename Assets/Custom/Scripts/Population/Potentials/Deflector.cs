@@ -55,6 +55,10 @@ class Deflector : MonoBehaviour
     public void SetTime(float chargetime)
     {
         timer = 4*chargetime;
+        if (timer < 3)
+        {
+            timer = 3.0f;
+        }
         Debug.Log("chargetime " + timer);
     }
 }
