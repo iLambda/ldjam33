@@ -30,7 +30,6 @@ public class ApocalypticPopManager : MonoBehaviour {
     public int HumanSpawn = 0;
     public static int HumanWavesNumber;
     public static int wavesNumber = 12;
-    
         
 	void Start () 
     {

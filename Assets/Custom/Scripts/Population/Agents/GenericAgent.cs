@@ -23,15 +23,15 @@ public class GenericAgent: MonoBehaviour
 
     //temp attributes
 	public Vector3 nextPos = Vector3.zero;
-	private static Collider worldCollider = null;
+	private Collider worldCollider = null;
 
 	public void Start() {
-		if (GenericAgent.worldCollider == null) 
+		if (worldCollider == null) 
 		{
 			GameObject world = GameObject.Find("GameArea");
 			if (world != null) 
 			{
-				GenericAgent.worldCollider = world.GetComponent<Collider>();
+				worldCollider = world.GetComponent<Collider>();
 			}
 		}
 	}

@@ -6,9 +6,21 @@ class Deflector : MonoBehaviour
 {
     //attributes
     public float hearRange = 7.0f; // TODO adjust this value
-    int zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
+    int _zombiesLayer = -1;
     public float timer=5.0f;
     public Collider[] zombiesWhoHeard;
+
+	int zombiesLayer
+	{
+		get 
+		{
+			if(_zombiesLayer == -1)
+			{
+				_zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
+			}
+			return _zombiesLayer;
+		}
+	}
 
     public void Start()
     {

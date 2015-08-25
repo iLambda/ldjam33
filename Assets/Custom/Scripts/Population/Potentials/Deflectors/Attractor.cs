@@ -6,14 +6,26 @@ class Attractor : MonoBehaviour
 {
     //attributes
     public float hearRange = 30.0f; // TODO adjust this value
-    int zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
+    int _zombiesLayer = -1;
     public float timer = 5.0f;
     public Collider[] zombiesWhoHeard;
+
+	int zombiesLayer 
+	{
+		get 
+		{
+			if(_zombiesLayer == -1)
+			{
+				_zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
+			}
+			return _zombiesLayer;
+		}
+	}
 
     public void Start()
     {
         //play sound here
-        zombiesWhoHeard = Physics.OverlapSphere(transform.position, hearRange, zombiesLayer);
+        zombiesWhoHeard = Physics.OverlapSphere(transform.position, hearRange, zombiesLayer);		
         //Debug.Log("There are " + zombiesWhoHeard.Length + " hearing me");
     }
 

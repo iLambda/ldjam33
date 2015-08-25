@@ -13,8 +13,10 @@ public class StatusUpdater : MonoBehaviour {
 	private UnityEngine.UI.Text contaminatedCountText;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start () {		
+		zombiesCount = 0;
+		humanCount = 0;
+		contaminatedCount = 0;
 		zombiesCountText = (UnityEngine.UI.Text) GameObject.Find ("ZombiesCountText").GetComponent<Text>(); 
 		humansCountText = (UnityEngine.UI.Text) GameObject.Find ("HumansCountText").GetComponent<Text>(); 
 		contaminatedCountText = (UnityEngine.UI.Text) GameObject.Find ("ContaminedCountText").GetComponent<Text>();

@@ -7,7 +7,9 @@ public class Weapons: MoveBehavior
 	public static Dictionary<Weapon, GenericWeapon> type = new Dictionary<Weapon, GenericWeapon>();
 
 	public void Awake ()
-	{// cooldown (s), range, damage, contagion
+	{   
+		type.Clear();
+		// cooldown (s), range, damage, contagion
         type.Add(Weapon.Fist, new GenericWeapon(1, 1, 50)); // TODO Gamedesign Values subject to future changes
 		type.Add(Weapon.Gun, new GenericWeapon (0.5, 15, 25)); //TODO Gamedesign Values subject to future changes
         type.Add(Weapon.Bite, new GenericWeapon(1, 1, 30, 40)); //TODO Gamedesign Values subject to future changes

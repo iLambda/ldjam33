@@ -62,10 +62,10 @@ public class GameController : MonoBehaviour {
 			
 			if (!hoverUi
 			    && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
-				//if (hit.collider.GetComponent<ActionReceiver>() != null)
 				{
 					var action = Instantiate(AttrackActionPrefab, new Vector3(hit.point.x, -1, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
                     action.SendMessage("SetTime", chargeAttrack);
+					action.transform.SetParent(this.transform);
 				}
 			}
 			chargeAttrack = 0.0f;
@@ -82,11 +82,10 @@ public class GameController : MonoBehaviour {
 
             if (!hoverUi
                 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            {
-                //if (hit.collider.GetComponent<ActionReceiver>() != null)
-                
+            {                
 				var action = Instantiate(RepulseActionPrefab, new Vector3(hit.point.x, -1, hit.point.z), Quaternion.Euler(0, 0, 0)) as GameObject;
-                    action.SendMessage("SetTime", chargeRepulse);
+				action.SendMessage("SetTime", chargeRepulse);
+				action.transform.SetParent(this.transform);
             }
 			
         }
