@@ -1,4 +1,4 @@
-# I Ate Uman
+# I Ate Humans
 
 ## The Game
 It's the end of the world. YOU finally made it. Zombies everywhere. Almost.
@@ -11,3 +11,5 @@ You can play the game by downloading the [exe file](https://github.com/iLambda/l
 No install required !
 
 ## The Story
+
+I Ate Humans has been developped for the [Ludum Dare 33](http://ludumdare.com)
