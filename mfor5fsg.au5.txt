@@ -1,0 +1,18 @@
+﻿J'avais oublié de remettre la musique
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   Assets/Custom/Scenes/Main.unity
+#	modified:   Assets/Custom/Sound/MusicMixer.mixer
+#	modified:   IAteUman_Data/output_log.txt
+#
+# Changes not staged for commit:
+#	modified:   IAteUman_Data/mainData
+#	modified:   IAteUman_Data/sharedassets1.assets
+#
+
