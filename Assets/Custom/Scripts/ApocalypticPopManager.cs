@@ -29,7 +29,7 @@ public class ApocalypticPopManager : MonoBehaviour {
     public Vector3 centerpos4 = Vector3.zero;
     public int HumanSpawn = 0;
     public static int HumanWavesNumber;
-    public static int wavesNumber = 3;
+    public static int wavesNumber = 12;
     
         
 	void Start () 
