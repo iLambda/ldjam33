@@ -343,10 +343,10 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24386334, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24365962, guid: e090194aa7b5afb4ca8486a9072818bf,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: f747c0d64972aad42ac819599afac2c4, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -413,10 +413,10 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24341150, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24341758, guid: e090194aa7b5afb4ca8486a9072818bf,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 04f56795d96051f4e80123cd0b0fd8dd, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -483,7 +483,7 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24394372, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24372932, guid: e090194aa7b5afb4ca8486a9072818bf,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e822bdd5910a7544391f002e4b7eb3b2, type: 3}
   m_PlayOnAwake: 1
@@ -565,10 +565,10 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24325372, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24399666, guid: e090194aa7b5afb4ca8486a9072818bf,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 85b8ce7679ad29d4da85a86d7580a540, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -825,9 +825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4768785b795218b42a85db021223da1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inScene1: {fileID: 24500003, guid: b8bea4b038b10154eb8d94273256e2c9, type: 2}
-  inScene2: {fileID: 24587328, guid: b8bea4b038b10154eb8d94273256e2c9, type: 2}
-  inScene3: {fileID: 24535006, guid: b8bea4b038b10154eb8d94273256e2c9, type: 2}
+  inScene1: {fileID: 24500003, guid: e090194aa7b5afb4ca8486a9072818bf, type: 2}
+  inScene2: {fileID: 24578766, guid: e090194aa7b5afb4ca8486a9072818bf, type: 2}
+  inScene3: {fileID: 24532808, guid: e090194aa7b5afb4ca8486a9072818bf, type: 2}
 --- !u!1 &1746662749
 GameObject:
   m_ObjectHideFlags: 0
