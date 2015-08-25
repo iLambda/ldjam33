@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14885015f65ee445a5a8daa19ee93c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLifeTime: 3
+  _maxLifeTime: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -182,7 +182,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: _maxLifeTime
-      value: 3
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
