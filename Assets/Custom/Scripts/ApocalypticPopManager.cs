@@ -28,7 +28,8 @@ public class ApocalypticPopManager : MonoBehaviour {
     public Vector3 centerpos3 = Vector3.zero;
     public Vector3 centerpos4 = Vector3.zero;
     public int HumanSpawn = 0;
-    public static int HumanWavesNumber = 12;
+    public static int HumanWavesNumber;
+    public static int wavesNumber = 3;
     
         
 	void Start () 
@@ -41,6 +42,7 @@ public class ApocalypticPopManager : MonoBehaviour {
 		xMin = worldCollider.bounds.min.x;
 		zMax = worldCollider.bounds.max.z;
 		zMin = worldCollider.bounds.min.z;
+        HumanWavesNumber = wavesNumber;
 
         //Setting RandomSeed
         if (RandomSeed == 0)
@@ -74,11 +76,11 @@ public class ApocalypticPopManager : MonoBehaviour {
          if ( (StatusUpdater.humanCount <= 1) && (HumanWavesNumber > 0) )
          {
              Debug.Log("No Humans yet");
-             if (HumanWavesNumber < HumanWavesNumber/3)
+             if (HumanWavesNumber < wavesNumber/3)
              {
                  Spawn(3);
              }
-             else if (HumanWavesNumber < 2*HumanWavesNumber / 3)
+             else if (HumanWavesNumber < 2*wavesNumber / 3)
              {
                  Spawn(2);
              }

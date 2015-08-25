@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0) return;
 		if (UnityEngine.Time.time - _startTime > _maxLifeTime) {
 			Destroy(this.gameObject);
 		}

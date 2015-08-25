@@ -325,9 +325,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 635492558}
   - 82: {fileID: 635492557}
+  - 82: {fileID: 635492559}
   - 82: {fileID: 635492556}
   - 82: {fileID: 635492555}
-  - 82: {fileID: 635492559}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -343,11 +343,11 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24341150, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24386334, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 04f56795d96051f4e80123cd0b0fd8dd, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .600000024
+  m_audioClip: {fileID: 8300000, guid: f747c0d64972aad42ac819599afac2c4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -413,11 +413,11 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24325372, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24341150, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 85b8ce7679ad29d4da85a86d7580a540, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .5
+  m_audioClip: {fileID: 8300000, guid: 04f56795d96051f4e80123cd0b0fd8dd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -565,10 +565,10 @@ AudioSource:
   m_GameObject: {fileID: 635492554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24386334, guid: b8bea4b038b10154eb8d94273256e2c9,
+  OutputAudioMixerGroup: {fileID: 24325372, guid: b8bea4b038b10154eb8d94273256e2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f747c0d64972aad42ac819599afac2c4, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 85b8ce7679ad29d4da85a86d7580a540, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -722,6 +722,7 @@ GameObject:
   - 124: {fileID: 1430512380}
   - 81: {fileID: 1430512379}
   - 114: {fileID: 1430512384}
+  - 114: {fileID: 1430512385}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -813,6 +814,20 @@ MonoBehaviour:
   zoomSpeed: 16
   chargeAttrack: 0
   chargeRepulse: 0
+--- !u!114 &1430512385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1430512378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4768785b795218b42a85db021223da1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inScene1: {fileID: 24500003, guid: b8bea4b038b10154eb8d94273256e2c9, type: 2}
+  inScene2: {fileID: 24587328, guid: b8bea4b038b10154eb8d94273256e2c9, type: 2}
+  inScene3: {fileID: 24535006, guid: b8bea4b038b10154eb8d94273256e2c9, type: 2}
 --- !u!1 &1746662749
 GameObject:
   m_ObjectHideFlags: 0
