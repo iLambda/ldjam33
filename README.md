@@ -2,7 +2,7 @@
 
 ## The Game
 It's the end of the world. YOU finally made it. Zombies everywhere. Almost.
-Some stupid Humans are still alive and menacing your zombipocalipse. Help you greenish friends to win one more time !
+Some stupid Humans are still alive and menacing your zombipocalipse. Help your greenish friends to win one more time !
 
 They are quite stupid, so keep the orders simple : a left clic will produce a scared scream that will attract zombies as surely as cheese attracts mice. A right clic on the opposite will scare them the hell off away from that nasty sawchain noise.
 
