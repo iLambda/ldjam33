@@ -5,7 +5,7 @@ using UnityEngine;
 class Attractor : MonoBehaviour
 {
     //attributes
-    public float hearRange = 15.0f; // TODO adjust this value
+    public float hearRange = 30.0f; // TODO adjust this value
     int zombiesLayer = 1 << LayerMask.NameToLayer("zombieHearing");
     public float timer = 5.0f;
     public Collider[] zombiesWhoHeard;

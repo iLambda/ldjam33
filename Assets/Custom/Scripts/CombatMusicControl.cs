@@ -19,30 +19,38 @@ public class CombatMusicControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        m_TransitionTime = 3.0f;
+        m_TransitionTime = 10.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Time.timeScale == 0) return;
-        if ((StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount <= 200))
+        if ((StatusUpdater.humanCount <= 1) )
         {
             //Debug.Log("No Humans yet");
-            if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 120)
-            {
-                inScene1.TransitionTo(m_TransitionTime);
-                Debug.Log("Nombre de zombies : " + (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount));
-            }
-            else if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount < 160)
-                {
-                    inScene2.TransitionTo(m_TransitionTime);
-                    Debug.Log("Nombre de zombies : " + (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount));
-                }
-            else
-            {
+            if ( (StatusUpdater.humanCount <= 1) && (ApocalypticPopManager.HumanWavesNumber > 0) )
+         {
+             Debug.Log("No Humans yet");
+             if (ApocalypticPopManager.HumanWavesNumber < ApocalypticPopManager.HumanWavesNumber/3)
+             {
                 inScene3.TransitionTo(m_TransitionTime);
                 Debug.Log("Nombre de zombies : " + (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount));
-            }
+             }
+             else if (ApocalypticPopManager.HumanWavesNumber < 2*ApocalypticPopManager.HumanWavesNumber / 3)
+             {
+                 inScene2.TransitionTo(m_TransitionTime);
+                    Debug.Log("Nombre de zombies : " + (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount));
+             }
+             else
+             {
+                 inScene1.TransitionTo(m_TransitionTime);
+                Debug.Log("Nombre de zombies : " + (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount));
+             }
+             ApocalypticPopManager.HumanWavesNumber--;
+         }
+
+
+
         }
 	}
 }

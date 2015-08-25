@@ -28,6 +28,7 @@ public class ApocalypticPopManager : MonoBehaviour {
     public Vector3 centerpos3 = Vector3.zero;
     public Vector3 centerpos4 = Vector3.zero;
     public int HumanSpawn = 0;
+    public static int HumanWavesNumber = 12;
     
         
 	void Start () 
@@ -70,23 +71,24 @@ public class ApocalypticPopManager : MonoBehaviour {
      
     public void Update () {
         if (Time.timeScale == 0) return;
-         if ( (StatusUpdater.humanCount <= 1) && (StatusUpdater.zombiesCount <= 200) )
+         if ( (StatusUpdater.humanCount <= 1) && (HumanWavesNumber > 0) )
          {
              Debug.Log("No Humans yet");
-             if (StatusUpdater.zombiesCount < 120)
+             if (HumanWavesNumber < HumanWavesNumber/3)
              {
-                 Spawn(1);
+                 Spawn(3);
              }
-             else if (StatusUpdater.zombiesCount < 160)
+             else if (HumanWavesNumber < 2*HumanWavesNumber / 3)
              {
                  Spawn(2);
              }
              else
              {
-                 Spawn(3);
+                 Spawn(1);
              }
+             HumanWavesNumber--;
          }
-         if (StatusUpdater.zombiesCount + StatusUpdater.contaminatedCount > 200)
+         if (HumanWavesNumber <= 0)
          {
               isShowing = !isShowing;
               menu.SetActive(isShowing);
